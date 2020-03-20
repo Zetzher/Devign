@@ -1,0 +1,1 @@
+// Array objetos con las keys de la informacion que tenga la carta
