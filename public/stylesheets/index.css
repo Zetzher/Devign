@@ -23,9 +23,28 @@ breakpoint {
     }
 }
 
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.icon_navbar {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.position_navbar {
+    word-spacing: 5px;
+}
+
+
+
 /*Menu toggle button*/
 #menu-btn{ 
-    position: absolute; left: 1em; top: 1em;
+    position: relative; left: 1em; top: 1em;
     width: 3em;
     padding: 1.5em;
     border-radius: 100%;
@@ -49,7 +68,7 @@ breakpoint {
   
   /*List container*/
   #menu{ 
-    position: absolute; 
+    position: relative; 
     top: 7em; left: 1em; 
     border: .5em solid #00FFCA; 
     width: 10em;
