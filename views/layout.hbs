@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>{{title}}</title>
 </head>
-<body>
-    <nav>
-        <img src="" class="" alt="Logo Devign">
-<!--collapse-->
-Login
-Sign Up
-Random
-Try
-<!--collapse-->
-    </nav>
+<body> 
+        <div id="menu-btn">
+      <div class="menu-btn-line"></div>
+      <div class="menu-btn-line"></div>
+      <div class="menu-btn-line"></div>
+      </div>
+ 
+ <nav id="menu">
+      <img src="" class="" alt="Logo Devign">
+      <ul>
+          <li>Login</li>
+          <li>Sign Up</li>
+          <li>Random</li>
+          <li>Try</li>
+      </ul>
+  </nav>
+    
     {{{body}}}
     <footer>
         Contact info:
@@ -24,5 +32,6 @@ Try
         Fake Street, 20
         devign@gmail.com
     </footer>
+    <script type="text/javascript" src="/scripts/hamburguer.js"></script>
 </body>
 </html>
