@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const cardSchema = new Schema ({
-    key: value,
-    key2: value,
-    key3: value
+    key: String,
+    key2: String,
+    key3: String
 }, {
     timestamps: true
 });
