@@ -53,16 +53,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //////////////////// para los middleware
-/*app.use(require('node-sass-middleware')({
+app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
-}));*/
+}));
 ////////////////////
 
-/*
+
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-*/
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -70,12 +70,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.locals.title = 'Devign - Project 2';
 
 app.use('/', indexRouter)
-/*
+
 app.use('/auth', authRouter);
 app.use('/random', randomRouter);
 app.use('/private/cards', privCardsRouter);
 app.use('/private/projects', privProjectsRouter);
-*/
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
