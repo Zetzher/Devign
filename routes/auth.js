@@ -6,3 +6,7 @@ const bcryptSalt = 10;
 const User = require('../models/User');  
 
 // signup, login, logout
+
+
+
+module.exports = router;
