@@ -10,14 +10,14 @@ We introduce the first collection designed for web development.
 
 ## User Stories
 
-* Sign-up:
-* Log-in:
-* Log-out:
-* Home page:
-* Random cards:
-* CRUD cards:
-* CRUD projects:
-* Edit profile: 
+* Sign-up
+* Log-in
+* Log-out
+* Home page
+* Random cards
+* CRUD cards
+* CRUD projects
+* Edit profile 
 
 ## MVP
 
@@ -112,12 +112,15 @@ devign-project/
 
 ## Links
 ### GitHub
-(URL)
+
+https://github.com/AmaliaGlez/devign
+
 ### Trello
 
 https://trello.com/b/vowe9aY5/devign-developdesign
 
 ## References
-
+````
 https://www.trytriggers.com/
 https://cardsagainsthumanity.com/
+````
