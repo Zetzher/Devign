@@ -5,18 +5,20 @@ var router = express.Router();
 
 //Ruta para conectar a card/create.hbs
 
-router.get("/private/card", (req, res, next) =>
+router.get("/create", (req, res, next) =>
 
-res.render("card/create.hbs")
+res.render("private/card/create")
 )
 
 
 
 //Ruta para conectar a card/edit.hbs
 
-router.get("/private/card/:id", (req, res, next) =>
+/*Para saber que funciona, se ha optado por dejar "/edit", pero la ruta correcta será "/edit/:id"
+que es cuando consigamos el id de la carta*/
+router.get("/edit", (req, res, next) =>
 
-res.render("card/edit.hbs")
+res.render("private/card/edit")
 )
 
 module.exports = router;
