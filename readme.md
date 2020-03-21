@@ -47,12 +47,13 @@ devign-project/
         ├── .env
         ├── app.js
         ├── readme.md
-        ├── package.json
         ├── bin
         │   ├── seeds.js
         │   └── www
         ├── config
         │   └── cloudinary.js
+        ├── middlewares
+        │   └── auth-mid.js
         ├── models
         │   ├── card.js
         │   ├── project.js
@@ -70,6 +71,7 @@ devign-project/
         │       └── projects.js
         │
         └── views
+            ├── partials
             ├── error.hbs
             ├── index.hbs
             ├── layout.hbs
