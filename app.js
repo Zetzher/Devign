@@ -73,8 +73,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Default title local
 app.locals.title = 'Devign - Project 2';
 
-app.use('/', indexRouter)
-
+app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/random', randomRouter);
 app.use('/private/cards', privCardsRouter);

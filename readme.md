@@ -60,6 +60,8 @@ devign-project/
         │   └── user.js
         ├── public
         │   ├── images
+        │   ├── scripts
+        │   │   └── hamburguer.js
         │   └── stylesheets
         │       └── style.css
         ├── routes
@@ -90,27 +92,58 @@ devign-project/
 ```
 ## Routes
 
-| **Method** | **Route**                          | **Description**                                              | Request  - Body                                          |
-| ---------- | ---------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
-| `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                                          |
-| `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
-| `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | { name, company, email, password }                       |
-| `GET`      | `/user`                            | Private route. Renders `user` view.                          |                                                          |
-| `GET`      | `card/edit/`                       | Private route.                                               |                                                          |
-| `PUT`      | `card/edit/:_id`                   | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `project/edit/`                    | Private route.                                               |                                                          |
-| `PUT`      | `project/edit/:_id`                | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `card/create/`                     | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `POST`     | `card/create/`                     | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `project/create/`                  | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `POST`     | `project/create/:_id`              | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/favorites`                       | Private route. Render the `favorites` view.                  |                                                          |
-| `POST`     | `/favorites/`                      | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
-| `DELETE`   | `/favorites/:restaurantId`         | Private route. Deletes the existing favorite from the current user. |                                                          |
-| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                                          |
-| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. | 
+| **Method** | **Route**                       | **Description**                                                 | Request  - Body                                          |
+| ---------- | ------------------------------- | ------------------------------------------------------------    | -------------------------------------------------------- |
+| `GET`      | `/`                             | Main page route. Renders home `index` view.                     |                                                          |
+| `GET`      | `/login`                        | Renders `login` form view.                                      |                                                          |
+| `POST`     | `/login`                        | Sends Login form data to the server.                            | { username, password }                                   |
+| `GET`      | `/signup`                       | Renders `signup` form view.                                     |                                                          |
+| `POST`     | `/signup`                       | Sends SignUp info to the server and creates user in the DB.     | { name, company, email, password }                       |
+| `GET`      | `/random`                       | Renders to the random card page                                 |                                                          |
+| `GET`      | `/user`                         | Priv route. Renders `user` view.                                |                                                          |
+| `POST`     | `/user`                         | Priv route. Sends edit profile info to server, updates DB.      |                                                          |
+| `GET`      | `/card/edit/`                   | Priv route. Renders `edit cards` form.                          |                                                          |
+| `PUT`      | `/card/edit/:_id`               | Priv route. Sends edit cards info to server, updates DB.        | { cardname, description }                                |
+| `GET`      | `/project/edit/`                | Priv route. Renders `edit projects` form.                       |                                                          |
+| `PUT`      | `/project/edit/:_id`            | Priv route. Sends edit projects info to server, updates DB.     | { projectname, company, description }                    |
+| `GET`      | `/card/create/`                 | Priv route. Renders `create cards` form.                        |                                                          |
+| `POST`     | `/card/create/`                 | Priv route. Sends new cards info to server, updates DB.         | { type, cardname, description }                          |
+| `GET`      | `/project/create/`              | Priv route. Renders `create projects` form.                     |                                                          |
+| `POST`     | `/project/create/:_id`          | Priv route. Sends new projects info to server, updates DB.      | { projectname, company, description}                     |
+| `DELETE`   | `/project`                      | Priv route. Deletes the user project from the DB.               |                                                          |
+| `DELETE`   | `/card`                         | Priv route. Deletes the user card from the DB.                  |                                                          |
+| `GET`      | `/logout`                       | Priv route. Destroy current session. Renders home `index` view. |                                                          |
+
+## Models
+
+* User model
+````
+  {
+    name: {String, required: true, unique: true},
+    email: {String, required: true, unique: true},
+    password: {String, required: true, unique: true},
+    image: {String, default: 'logo-devign-green-50px.png'},
+    projects: [projectsId],
+    cards: [cardsId]
+  }
+````
+* Project model
+````
+  {
+    name: {String, required: true, unique: true},
+    card: {cardId},
+    description: String
+  }
+````
+* Card model
+````
+  {
+    user: {userId},
+    type: {String, value: ['A', 'B', 'C']}
+    title: String,
+    description: String
+  }
+````
 
 ## Links
 ### GitHub
