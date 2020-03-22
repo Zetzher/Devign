@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema ({
-    name: {
-        String, required: true, unique: true
-        },
-    card: String,
-    description: String
+    // name: {
+    //     String, required: true, unique: true
+    //     },
+    // card: String,
+    // description: String
 }, {
     timestamps: true
 });
