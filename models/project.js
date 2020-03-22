@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema ({
-    key: String,
-    key2: String,
-    key3: String
+    title: String,
+    description: String,
+    card: [{ type: Schema.Types.ObjectId, ref: 'Card' }]
 }, {
     timestamps: true
 });

@@ -36,6 +36,10 @@ var authRouter = require('./routes/auth');
 var randomRouter = require('./routes/random');
 var privCardsRouter = require('./routes/private/cards');
 var privProjectsRouter = require('./routes/private/projects');
+//Cambiar privCardsRouter y privProjectsRouter por:
+//const privateRouter = require('./routes/private');
+
+//sugerencia: cambiar var por const
 
 var app = express();
 
@@ -75,6 +79,8 @@ app.use('/auth', authRouter);
 app.use('/random', randomRouter);
 app.use('/private/cards', privCardsRouter);
 app.use('/private/projects', privProjectsRouter);
+//Cambiar las dos anteriores por:
+//app.use('/private/user', privateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

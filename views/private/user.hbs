@@ -15,7 +15,7 @@
         <!--Información de la base de datos-->
         <ul>
             {{#each projects}}
-                <!--Cada li una carpeta de proyecto-->
+                <!--Cada li una carpeta de proyecto -debería ser llamando al objeto {{userProjects}}-->
                 <li>
                     <h3>Project Title: {{this.title}}</h3>
                     <a class="btn btn-dark" href="/project/{{_id}}/edit">Edit</a>
@@ -36,7 +36,7 @@
         <div>
             <ul>
                 {{#each cards}}
-                    <!--Cada li una carta-->
+                    <!--Cada li una card -debería ser llamando al objeto {{userCards}}-->
                     <li>
                         <p>Message Card: {{this.card.message}}</p>
                         <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
