@@ -1,0 +1,14 @@
+<section>
+
+    <h2>Editing card</h2>
+
+    <div>
+ <form action="/card/edit" method="post">
+            <textarea name="message" type="text" value="{{message}}" required>
+            <input name="type" type="text" value="{{type}}" required>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="../user.hbs" class="btn btn-warning">Return</a>
+        </form>
+    </div>
+
+</section>
