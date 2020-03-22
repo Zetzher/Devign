@@ -27,13 +27,13 @@ breakpoint {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    background: linear-gradient(to right, blue, purple);
+    background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
     
 }
 
 .navbar a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .icon_navbar {
