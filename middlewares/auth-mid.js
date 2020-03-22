@@ -6,7 +6,7 @@ function userIsNotLoggedIn (req, res, next){
     }
     else{
         console.log("the user is already authenticated")
-        res.redirect("/priv")
+        res.redirect("/private/user")
     }
 }
 
@@ -20,11 +20,8 @@ function userIsLoggedIn (req, res, next){
 
     else {
         console.log("the user is not authenticated")
-        res.render("log-in", {errorMessage: "Please, register first."})
+        res.render("auth/login", {errorMessage: "Please, register first."})
     }
 }
 
-module.exports = {
-    userIsNotLoggedIn,
-    userIsLoggedIn
-}
+module.exports = {userIsNotLoggedIn, userIsLoggedIn}

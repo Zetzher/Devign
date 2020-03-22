@@ -25,22 +25,22 @@ mongoose
   .catch(err => {
     console.error('Error connecting to mongo', err);
   });
+  
+// secret: Used to sign the session ID cookie (required)
+// cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
+// store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
 
 ////////// No se si hace falta porque el debug no se usa
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 //////////
 
-var indexRouter = require('./routes/index');
-var authRouter = require('./routes/auth');
-var randomRouter = require('./routes/random');
-var privCardsRouter = require('./routes/private/cards');
-var privProjectsRouter = require('./routes/private/projects');
-var privUserRouter = require('./routes/private/user');
-//Cambiar privCardsRouter y privProjectsRouter por:
-//const privateRouter = require('./routes/private');
-
-//sugerencia: cambiar var por const
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+const randomRouter = require('./routes/random');
+const privCardsRouter = require('./routes/private/cards');
+const privProjectsRouter = require('./routes/private/projects');
+const privUserRouter = require('./routes/private/user');
 
 var app = express();
 
@@ -65,14 +65,21 @@ app.use(require('node-sass-middleware')({
 }));
 ////////////////////
 
+app.use(session({
+    secret: "basic-auth-secret",
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    })
+}));
 
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// Default title local
-app.locals.title = 'Devign - Project 2';
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
@@ -101,23 +108,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-
-
-// Crear sesiones
-
-// secret: Used to sign the session ID cookie (required)
-// cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
-// store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
-
-app.use(session({
-  secret: "basic-auth-secret",
-  cookie: { maxAge: 6000000 },
-  resave: true,
-  saveUninitialized: true,
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
-  })
-}));

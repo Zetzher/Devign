@@ -4,7 +4,7 @@ const router = express.Router();
 
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
-const Project = require("../../models/project");
+const Project = require("../../models/Project");
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -24,12 +24,12 @@ router.post('/create', async (req, res, next) => {
 		const {
 			title,
 			description,
-			card
+			cards
 		} = req.body;
 		await new Project({
 			title,
 			description,
-			card
+			cards
 		}).save(); //save the new object created to DB
 		res.redirect('/private/user');
 	} catch {

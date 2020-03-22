@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-/*
+
 const userSchema = new Schema({
-  name: String,
+  username: String,
   email: String,
   password: String,
-  imgPath: String,
+  imgPath: { type: String, default: '../public/images/profile-default.png' },
   projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
   cards: [{ type: Schema.Types.ObjectId, ref: 'Card' }]
+}, {
+  timestamps: true
 });
-
-userSchema.set('timestamps', true);
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;*/
+module.exports = User;

@@ -4,7 +4,7 @@ const router = express.Router();
 
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
-const User = require("../../models/user");
+const User = require("../../models/User");
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -12,12 +12,11 @@ const User = require("../../models/user");
 //Shorcut -> /private/user
 // GET private/user
 router.get('/', (req, res, next) => {
-	/*
-	try {
-		const projects = await Project.find(); //save in const the model*/
+
+		//const projects = Project.find(); //save in const the model*/
 		res.render('private/user.hbs'); //('view route', {object DB})
-	/*} catch (error) {
-		next(error);*/
+	//catch (error) {
+	//next(error);
 	
 });
 

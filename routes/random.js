@@ -8,21 +8,12 @@ const User = require('../models/User')
 //shorcut -> /random
 
 router.get("/", (req, res, next) => {
-    // para el boton, necesario? (ya hay link a la misma pagina en hbs del boton)
+    
     res.render("random.hbs", {errorMessage: ''});
 })
 
-// Después de esta ruta ponemos los botones de guardar y crear para que no los deje acceder y redirijan al usuario al login
-// router.use((req, res, next) => {
-//     if (req.session.currentUser) {
-//       next();
-//       return;
-//     }
-//     res.redirect('/login');
-// });
-
-// const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
-// router.use((req, res, next)=> userIsLoggedIn(req, res, next));
+const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
+router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
 router.get("/project/create", (req, res, next) => {
     res.render("project/create");
@@ -41,7 +32,7 @@ router.post("/project/create", async (req, res, next) => {
 });
 
 router.post("/logout", (req, res, next) => {
-    //delete req.session.currentUser;
+    delete req.session.currentUser;
     res.redirect("/");
 });
 
