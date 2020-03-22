@@ -1,29 +1,55 @@
 <section>
 
-<h1>Profile</h1>
+    <div>
+        {{#each user}}
+            <!--Usar multer para que el usario pueda subir una imagen suya-->
+            <img src="../../public/images/profile-default.png" class="" alt="Imagen del usuario">
+            <img src="{{thisimgPath}}" alt="{{this.name}}">
+            <h3>Name: {{this.name}}</h3>
+            <h4>Company: {{this.company}}</h4>
+        {{/each}}
+    </div>
 
-<img src="" class="" alt="Imagen del usuario">
-<!--Usar multer para que el usario pueda subir una imagen suya-->
+    <h2>My Projects</h2>
+    <div>
+        <!--Información de la base de datos-->
+        <ul>
+            {{#each projects}}
+                <!--Cada li una carpeta de proyecto-->
+                <li>
+                    <h3>Project Title: {{this.title}}</h3>
+                    <a class="btn btn-dark" href="/project/{{_id}}/edit">Edit</a>
+                    <form action="project/{{this._id}}/delete" method="post">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </li>
+            {{/each}}
+        </ul>
+        <div>
+            <a class="btn btn-info" href="../random.hbs">Create Project</a>
+        </div>
+    </div>
 
-<h2>
-    My Projects
-</h2>
-
-<div>
-    <!--Información de la base de datos-->
-    <a href="/project/edit">Edit</a>
-    <a href="/project/delete">Delete</a>
-    <a href="../random.hbs">Create</a>
-</div>
-
-<h2>
-    My Cards
-</h2>
-<div>
-    <!--Información de la base de datos-->
-    <a href="/card/edit">Edit</a>
-    <a href="/card/delete">Delete</a>
-    <a href="/card/create">Create</a>
-</div>
+    <h2>My Cards</h2>
+    <div>
+        <!--Información de la base de datos-->
+        <div>
+            <ul>
+                {{#each cards}}
+                    <!--Cada li una carta-->
+                    <li>
+                        <p>Message Card: {{this.message}}</p>
+                        <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
+                        <form action="card/{{this._id}}/delete" method="post">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <a class="btn btn-info" href="/card/create">Create Card</a>
+        </div>
+    </div>
 
 </section>
