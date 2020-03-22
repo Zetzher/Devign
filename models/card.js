@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const cardSchema = new Schema ({
+/*const cardSchema = new Schema ({
     message: { type: String, unique: true },
     type: {
         String, value: ['A', 'B', 'C']
@@ -15,4 +15,4 @@ const cardSchema = new Schema ({
 
 const Card = mongoose.model("Card", cardSchema);
 
-module.exports = Card;
+module.exports = Card;*/

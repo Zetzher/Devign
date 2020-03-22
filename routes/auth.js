@@ -9,8 +9,10 @@ const User = require('../models/User');
 // const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
 // router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 
+//Shorcut /auth
+
 router.get("/signup", (req, res, next) => {
-    res.render("auth/signup", {errorMessage: ''});
+    res.render("auth/signup.hbs", {errorMessage: ''});
 })
 
 router.post("/signup", (req, res, next) => {
@@ -53,7 +55,7 @@ router.post("/signup", (req, res, next) => {
 res.redirect("/private/user"); })
 
 router.get("/login", (req, res, next) => {
-    res.render("auth/login", {errorMessage: ''});
+    res.render("auth/login.hbs", {errorMessage: ''});
 })
 
 router.post("/login", (req, res, next) => {

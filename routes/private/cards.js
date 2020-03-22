@@ -11,25 +11,32 @@ const Card = require("../../models/card");
 
 /////////////////////////////////////////////////////////////////////////////////
 
+
+
 // GET private/user
-router.get('/', async (req, res, next) => {
-	try {
+//router.get('/create', /*async*/ (req, res, next) => {
+    
+    
+  //  res.render("private/card/create")
+    /*try {
 		const cards = await Card.find(); //save in const the model
 		res.render('user', {
 			cards
 		}); //('view route', {object DB})
 	} catch (error) {
 		next(error);
-	}
-});
+	}*/
+//});
+
+//shortcut = /private/cards
 
 // GET create /cards
-router.get('/create', async (req, res, next) => {
-	try {
-		res.render('card/create');
-	} catch (error) {
-		next(error);
-	}
+router.get('/create',  (req, res, next) => {
+    
+    //Acceder a la url private/cards/create
+
+		res.render('private/card/create.hbs');
+	
 });
 
 // POST create /cards (form)
@@ -48,7 +55,7 @@ router.post('/create', async (req, res, next) => {
 		}).save(); //save the new object created to DB
 		res.redirect('/cards');
 	} catch {
-		res.render('card/create');
+		res.render('card/create.hbs');
 	}
 });
 
@@ -64,52 +71,16 @@ router.post('/create', async (req, res, next) => {
 
 // POST delete /cards
 router.post('/:_id/delete', async (req, res, next) => {
-	try {
-		const id = req.params;
-		console.log(id);
-		await Card.findOneAndDelete(id);
-		res.redirect('/cards');
-	} catch (error) {
-		next(error);
-	}
+	
 });
 
 // GET edit /cards (details)
 router.get('/:_id/edit', async (req, res, next) => {
-	try {
-		const card = await Card.findOne(req.params);
-		res.render('card/edit', card);
-	} catch (error) {
-		next(error);
-	}
+	//Para comprobar si funciona la ruta, solo hay que poner /edit en vez de /:_id/edit
+		res.render('private/card/edit', card);
 });
 
-// POST edit /cards (form)
-router.post('/:_id/', async (req, res, next) => {
-	try {
-		console.log(req.body);
-		const {
-			id,
-			title,
-			description,
-			card
-		} = req.body;
-		console.log(id);
-		await Card.update({
-			_id: id //condición para encontrarlo
-		}, {
-			$set: { //se entregan los nuevos valores
-				title,
-				description
-			}
-		});
-		res.redirect('/cards');
-	} catch (error) {
-		console.log(error);
-	}
-});
 
-module.exports = router;
 
 module.exports = router;
 

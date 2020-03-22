@@ -8,27 +8,13 @@ const Project = require("../../models/project");
 
 /////////////////////////////////////////////////////////////////////////////////
 
-// GET private/user
-router.get('/', async (req, res, next) => {
-	try {
-		const projects = await Project.find(); //save in const the model
-		res.render('user', {
-			projects
-		}); //('view route', {object DB})
-	} catch (error) {
-		next(error);
-	}
-});
+//shorcut -> /private/projects
 
 // GET create /projects
-router.get('random/:_id/create', async (req, res, next) => {
-	try {
-		const id = req.params;
-		await Project.//AÑADIR EL METHOD PERTINENTE PARA GUARDAR LA ID
-		res.render('project/create');
-	} catch (error) {
-		next(error);
-	}
+router.get('/random/create', async (req, res, next) => {
+	
+		res.render('private/project/create.hbs');
+	
 });
 
 // POST create /projects (form)
@@ -45,9 +31,9 @@ router.post('/create', async (req, res, next) => {
 			description,
 			card
 		}).save(); //save the new object created to DB
-		res.redirect('/projects');
+		res.redirect('/private/user');
 	} catch {
-		res.render('project/create');
+		res.render('project/create.hbs');
 	}
 });
 
@@ -77,7 +63,7 @@ router.post('/:_id/delete', async (req, res, next) => {
 router.get('/:_id/edit', async (req, res, next) => {
 	try {
 		const project = await Project.findOne(req.params);
-		res.render('project/edit', project);
+		res.render('project/edit.hbs', project);
 	} catch (error) {
 		next(error);
 	}

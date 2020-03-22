@@ -5,9 +5,11 @@ const Card = require('../models/Card')
 const Project = require('../models/Project')
 const User = require('../models/User')
 
-router.get("/random", (req, res, next) => {
+//shorcut -> /random
+
+router.get("/", (req, res, next) => {
     // para el boton, necesario? (ya hay link a la misma pagina en hbs del boton)
-    res.render("random", {errorMessage: ''});
+    res.render("random.hbs", {errorMessage: ''});
 })
 
 // Después de esta ruta ponemos los botones de guardar y crear para que no los deje acceder y redirijan al usuario al login
