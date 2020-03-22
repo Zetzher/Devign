@@ -4,10 +4,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const projectSchema = new Schema ({
-    title: String,
+const projectSchema = new Schema({
+    title: {
+        String,
+        required: true,
+        unique: true
+    },
     description: String,
-    card: [{ type: Schema.Types.ObjectId, ref: 'Card' }]
+    card: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Card'
+    }]
 }, {
     timestamps: true
 });
