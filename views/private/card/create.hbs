@@ -1,1 +1,14 @@
-<h1>hello world!</h1>
+<section>
+
+    <h2>Creating a new card</h2>
+
+    <div>
+ <form action="/card/create" method="post">
+            <textarea name="message" type="text" placeholder="My card message" required>
+            <input name="type" type="text" placeholder="Metaphor, joke, quote" required>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="../user.hbs" class="btn btn-warning">Return</a>
+        </form>
+    </div>
+
+</section>
