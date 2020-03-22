@@ -38,7 +38,7 @@
                 {{#each cards}}
                     <!--Cada li una carta-->
                     <li>
-                        <p>Message Card: {{this.message}}</p>
+                        <p>Message Card: {{this.card.message}}</p>
                         <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
                         <form action="card/{{this._id}}/delete" method="post">
                             <button class="btn btn-danger">Delete</button>

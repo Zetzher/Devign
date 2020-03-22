@@ -4,15 +4,15 @@
 
     <article>
         <div>
-            <p>Message Card: {{this.message}}</p>
+            <p>Message Card: {{_id.message}}</p>
         </div>
 
         <form action="/project/create" method="post">
             <input name="title" type="text" placeholder="My project title" required>
             <textarea name="description" type="text" placeholder="Write here your first ideas" required>
-            <button type="submit" class="btn btn-info">Save</button>
+            <button type="submit" class="btn btn-success">Save</button>
             <a href="../../random.hbs" class="btn btn-warning">Try again</a>
         </form>
     </article>
-    
+
 </section>
