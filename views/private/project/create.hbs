@@ -1,21 +1,25 @@
 <section>
-    <h1>
-<!--Nombre del proyecto-->
-    </h1>
+    <h1>CREATE PROJECT</h1>
 
     <div>
-        <form action="" method="POST">
+     <form action="" method="POST">
+        <label>Project Name</label>
         <input type="text" class="" name="projectname">
+        <label>Company</label>
+        <input type="text" class="" name="company">
 
-    <!--Carta traida por :id-->
-    <h2>
-        Description
-    </h2>
-    <input type="textarea" class="">
+        <!--Carta traida por :id-->
+        <label>Description</label>
+        <input type="textarea" name="description" class="">
 
-    <button type="submit">Save</button>
+        <button type="submit">Save</button>
      </form>
-<a href="" class="">Again!</a> <!--Redirige a Random-->
+<a href="/random" class="">Again!</a> <!--Redirige a Random-->
 
 </div>
 </section>
+
+{{!-- Mensaje de creado correctamente --}}
+{{#if message}}
+    <p>{{message}}</p>
+{{/if}}

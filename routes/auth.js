@@ -3,10 +3,98 @@ var router = express.Router();
 
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;      
-const User = require('../models/User');  
+const User = require('../models/User'); 
 
-// signup, login, logout
+// estas dos líneas le dicen a router que por favor use userIsNotLoggedIn
+// const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
+// router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 
+router.get("/signup", (req, res, next) => {
+    res.render("auth/signup", {errorMessage: ''});
+})
 
+router.post("/signup", (req, res, next) => {
+    // const {username, email, password, repeatPassword} = req.body
+
+    // if(!username || !password) {
+    //     res.render("signup", {errorMessage: "Please complete the fields"})
+    //     return;
+    // }
+
+    // if(password !== repeatPassword) {
+    //     res.render("signup", {errorMessage: "Passwords don't match"})
+    //     return;
+    // }
+
+    // if (emailInput === '' || passwordInput === '') {
+    //     res.render("signup", {errorMessage: "Please enter email and password"});
+    //     return;
+    // }
+
+    // User.findOne({username})
+    // .then(user => {
+    //     if (user) {
+    //         res.render("signup", {errorMessage: "The userName already exists"})
+    //         return;
+    //     }
+
+    //     const salt = bcrypt.genSaltSync(bcryptSalt)
+    //     const hashPass = bcrypt.hashSync(password, salt)
+    //     User.create({username, email, "password": hashPass})
+    //     .then((user) => {
+            
+    //         req.session.currentUser = user;
+//             res.redirect("/private/user")
+//         })
+//         .catch(err => console.log("Error at posting signup: " + err))
+//     })
+//     .catch(err => console.log("Error finding the user in DB: " + err))
+// })
+res.redirect("/private/user"); })
+
+router.get("/login", (req, res, next) => {
+    res.render("auth/login", {errorMessage: ''});
+})
+
+router.post("/login", (req, res, next) => {
+//     const {username, password} = req.body;
+
+//     if(username === "" || password === "") {
+//         res.render("login", {errorMessage: "Please, complete all the fields"})
+//     }
+
+//     User.findOne({username})
+//         .then(user => {
+//             if (!user) {
+//                 res.render("login", {errorMessage: "There is no user with that username"})
+//             }
+//             if (bcrypt.compareSync(password, user.password)) { // user.password es la hashseada
+//                 req.session.currentUser = user;
+//                 res.redirect("/private/user")
+//             }
+
+//             else {
+//                 res.render("login", {errorMessage: "Incorrect password"})
+//             }
+
+//         })
+//         .catch(err => console.log("error finding the user: " + err))
+// })
+
+router.get('/logout', (req, res, next) => {
+    // if (!req.session.currentUser) {
+    //   res.redirect('/');
+    //   return;
+    // }
+  
+    // req.session.destroy((err) => {
+    //   if (err) {
+    //     next(err);
+    //     return;
+    //   }
+  
+      res.redirect('/');
+    });
+});
 
 module.exports = router;
