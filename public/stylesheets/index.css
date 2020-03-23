@@ -75,7 +75,7 @@ body {
 
 .e_ {
   color: #00A99D;
-  
+
 }
 
 .a {
@@ -169,11 +169,36 @@ body {
 }
 
 .posicion_foto_perfil {
-display: flex;
-justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.glasses_amalia {
+  width: 4vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(#662D91, #0074BA, #00A99D);
+  border-radius: 100%;
+  padding: 10px;
+}
 
+.gamepad_julian {
+  width: 4vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(#662D91, #0074BA, #00A99D);
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.palette_paula {
+  width: 4vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(#662D91, #0074BA, #00A99D);
+  border-radius: 100%;
+  padding: 10px;
+}
 
 /*Menu toggle button*/
 #menu-btn {
