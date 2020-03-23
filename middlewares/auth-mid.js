@@ -1,4 +1,4 @@
-// UserIsNotLoggedIn dejará parasar al usuario a la pagina que solicitó solo si este NO está registrado (util para las paginas de authentication)
+// UserIsNotLoggedIn dejará pasar al usuario a la pagina que solicitó solo si este NO está registrado (util para las paginas de authentication)
 
 function userIsNotLoggedIn (req, res, next){
     if (!req.session.currentUser){
