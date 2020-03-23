@@ -1,6 +1,7 @@
 // UserIsNotLoggedIn dejará parasar al usuario a la pagina que solicitó solo si este NO está registrado (util para las paginas de authentication)
 
 function userIsNotLoggedIn (req, res, next){
+
     if (!req.session.currentUser){
         next()
     }
@@ -13,7 +14,7 @@ function userIsNotLoggedIn (req, res, next){
 // UserIsLoggedIn dejará parasar al usuario a la pagina que solicitó solo si este está registrado (util para las paginas privadas)
 
 function userIsLoggedIn (req, res, next){
-console.log("Helloo, userislogin")
+//console.log("Helloo, userislogin")
     if (req.session.currentUser){
         next()
     } 

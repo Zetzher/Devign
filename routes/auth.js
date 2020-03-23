@@ -23,11 +23,10 @@ router.get('/logout', (req, res, next) => {
       res.redirect('/');
     });
 });
+
 // estas dos líneas le dicen a router que por favor use userIsNotLoggedIn
- const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
- router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
-//const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
-//router.use((req, res, next)=> userIsLoggedIn(req, res, next));
+const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
+router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 
 //Shorcut /auth
 
@@ -101,6 +100,5 @@ router.post("/login", (req, res, next) => {
         })
         .catch(err => console.log("error finding the user: " + err))
 })
-
 
 module.exports = router;

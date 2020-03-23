@@ -2,22 +2,23 @@
 const express = require('express');
 const router = express.Router();
 
-/////////////////////////////////////////////////////////////////////////////////
-//Require model
 const User = require("../../models/User");
 
-/////////////////////////////////////////////////////////////////////////////////
+// const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
+// router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
-//Pensar quien hace esto
 //Shorcut -> /private/user
-// GET private/user
-router.get('/', (req, res, next) => {
 
-		//const projects = Project.find(); //save in const the model*/
-		res.render('private/user.hbs'); //('view route', {object DB})
-	//catch (error) {
-	//next(error);
-	
+router.get('/', (req, res, next) => {
+	User.find()
+	res.render('private/user.hbs', {user}); 
 });
+
+router.get('/:id', (req, res, next) => {
+
+})
+
+
+
 
 module.exports = router;

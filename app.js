@@ -26,14 +26,9 @@ mongoose
     console.error('Error connecting to mongo', err);
   });
   
-// secret: Used to sign the session ID cookie (required)
-// cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
-// store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
-
 ////////// No se si hace falta porque el debug no se usa
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
-//////////
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -49,22 +44,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials')
 
-// Middleware Setup
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//////////////////// para los middleware
+// para los middleware
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-////////////////////
 
+// inicio de sesion
+// secret: Used to sign the session ID cookie (required)
+// cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
+// store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
 app.use(session({
     secret: "basic-auth-secret",
     cookie: { maxAge: 60000 },
@@ -87,9 +83,6 @@ app.use('/random', randomRouter);
 app.use('/private/cards', privCardsRouter);
 app.use('/private/projects', privProjectsRouter);
 app.use('/private/user', privUserRouter);
-
-//Cambiar las dos anteriores por:
-//app.use('/private', privateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

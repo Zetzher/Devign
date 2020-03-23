@@ -4,10 +4,11 @@
             <img src="/images/profile-default.png" class="col-lg-2" alt="Imagen del usuario">
         {{#each user}}
             <!--Usar multer para que el usario pueda subir una imagen suya-->
-            <img src="{{thisimgPath}}" alt="{{this.name}}">
-            <h3>Name: {{this.name}}</h3>
-            <h4>Company: {{this.company}}</h4>
+            <img src="{{this.imgPath}}" alt="{{this.name}}">
+            <h3>Name: {{this.username}}</h3>
+          
         {{/each}}
+
     </div>
 
     <h2>My Projects</h2>

@@ -9,9 +9,33 @@ const router = express.Router();
 //Require model
 const Card = require("../../models/Card");
 
-/////////////////////////////////////////////////////////////////////////////////
+router.get('/random/create/:id', async (req, res, next) => {
+	//console.log("ruta geeeeeet", req.params);
+		const userId = req.params.id;
+		const card = await User.findById(userId); 
+		
+		res.render('private/project/create.hbs', {user});
+});
 
-
+router.post('/create/:id', async (req, res, next) => {
+	//console.log("poooost ************", req.params.id);
+	const userId = req.params.id
+	console.log("user id?", userId);
+	// try {
+	// 	const {
+	// 		title,
+	// 		description,
+	// 	} = req.body;
+	// 	await new Project({
+	// 		title,
+	// 		description,
+	// 		card: cardId
+	// 	}).save(); //save the new object created to DB
+	// 	res.redirect('/private/user');
+	// } catch {
+	// 	res.render('project/create.hbs');
+	// }
+});
 
 // GET private/user
 //router.get('/create', /*async*/ (req, res, next) => {
