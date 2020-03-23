@@ -6,14 +6,14 @@ function userIsNotLoggedIn (req, res, next){
     }
     else{
         console.log("the user is already authenticated")
-        res.redirect("/private/user")
+        res.redirect("/")
     }
 }
 
 // UserIsLoggedIn dejará parasar al usuario a la pagina que solicitó solo si este está registrado (util para las paginas privadas)
 
 function userIsLoggedIn (req, res, next){
-
+console.log("Helloo, userislogin")
     if (req.session.currentUser){
         next()
     } 
