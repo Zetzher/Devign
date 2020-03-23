@@ -3,7 +3,7 @@
     <h2>Creating a new card</h2>
 
     <div>
- <form action="/card/create" method="post">
+ <form action="/card/create/{{user._id}}" method="post">
             <input name="type" type="text" placeholder="Metaphor, joke, quote" required><br>
             <textarea name="message" type="text" placeholder="My card message" required></textarea>
             <button type="submit" class="btn btn-success">Save</button>

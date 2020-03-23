@@ -56,7 +56,7 @@ const cards = [
     },
 
     {
-        description: 'Cuando haces break, ya no hay constinue',
+        description: 'Cuando haces break, ya no hay continue',
         type: 'A',
     },
 
@@ -71,7 +71,7 @@ const cards = [
     },
 
     {
-        description: 'Soy Aragorn extend de Araghorn new de Islidur, class de los Dunedain',
+        description: 'Soy Aragorn extend de Arathorn new de Islidur, class de los Dunedain',
         type: 'A',
     },
 
@@ -162,49 +162,3 @@ Card.create(cards, (err) => {
   console.log(`Created ${cards.length} cards`)
   mongoose.connection.close();
 });
-
-/*
-const createProjects = projects.map(user => {
-    const newProject = new Project(user.projects);
-    return newProject.save()
-    .then(project => {
-      return project.title;
-    })
-    .catch(error => {
-      throw new Error(`Impossible to add the project. ${error}`)
-    })
-  })
-  
-  
-  let findProjects = Promise.all(createProjects)
-    .then(project => {
-      return projects.map(project => {
-         return Project.findOne({title: user.project.title})
-          .then(project => {
-            if (!project) {
-              throw new Error(`unknown project ${user.project.title}`);
-            }
-            return Object.assign({}, project, {project: project._id});
-          })
-      });
-  })
-  .catch(error => {
-    throw new Error(error)
-  })
-  
-  const saveProjects = findProjects.then(findProjects => {
-    return Promise.all(findProjects)
-    .then(projects => {
-      return projects.map(project => {
-          const newProject = new Project(project);
-          return newProject.save();
-      })
-    })
-  }).then(savedProjects => {
-    Promise.all(savedProjects)
-    .then(projects => projects.forEach(project => 
-  console.log(`Created ${project.title}`)))
-    .then(() => mongoose.connection.close())
-    .catch(err => console.log("Error while saving the project: ", err))
-})
-*/
