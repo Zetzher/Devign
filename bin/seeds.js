@@ -7,7 +7,6 @@ const dbName = 'devign-project';
 mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true });
 Card.collection.drop();
 Project.collection.drop();
-User.collection.drop();
 
 const cards = [
 
