@@ -4,11 +4,11 @@
 
     <article>
         <div>
-            <p>Message Card: {{_id.description}}</p>
+            <p>Message Card: {{card.description}}</p>
         </div>
 <!--¿La ruta que tiene el action tiene que ser la misma que el router.post?
 Habiendo hecho un app.use que es /private/projects-->
-        <form action="/private/projects/create/{{cardId}}" method="post">
+        <form action="/private/projects/create/{{card._id}}" method="post">
             <input name="title" type="text" placeholder="My project title" required>
             <input name="description" type="textarea" placeholder="Write here your first ideas" required>
             

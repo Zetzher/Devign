@@ -5,6 +5,7 @@ const router = express.Router();
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
 const Project = require("../../models/Project");
+const Card = require("../../models/Card")
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +15,9 @@ const Project = require("../../models/Project");
 router.get('/random/create/:id', async (req, res, next) => {
 	//console.log("ruta geeeeeet", req.params);
 		const cardId = req.params.id;
-		res.render('private/project/create.hbs', {cardId});
+		const card = await Card.findById(cardId); 
+		
+		res.render('private/project/create.hbs', {card});
 });
 
 // POST create /projects (form)
