@@ -16,9 +16,7 @@ const User = require('../models/User')
 router.get("/", (req, res, next) => {
     Card.find() 
     .then(data => {
-        console.log(data)
         const random = Math.floor(Math.random() * data.length);
-        console.log("kjhgkrhtg*******", data[random]);
         res.render("random.hbs", {data: data[random]});
     })
     .catch(err => console.log(err));

@@ -23,10 +23,13 @@ breakpoint {
     }
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin-bottom: 10px;
     background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
     
