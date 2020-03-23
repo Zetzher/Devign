@@ -151,21 +151,21 @@ body {
   margin-top: 70px;
   width: 15vw;
   border: 4px outset #00A99D;
-  border-radius: 20%;
+  border-radius: 20px;
 }
 
 .foto_perfil_julian {
   margin-top: 70px;
   width: 15vw;
   border: 4px outset #0074BA;
-  border-radius: 20%;
+  border-radius: 20px;
 }
 
 .foto_perfil_paula {
   margin-top: 70px;
   width: 15vw;
   border: 4px outset #662D91;
-  border-radius: 20%;
+  border-radius: 20px;
 }
 
 .posicion_foto_perfil {
