@@ -10,15 +10,9 @@ const User = require("../../models/User");
 //Shorcut -> /private/user
 
 router.get('/', (req, res, next) => {
-	User.find()
+	console.log("current user", req.session.currentUser)
+	const user = req.session.currentUser;
 	res.render('private/user.hbs', {user}); 
 });
-
-router.get('/:id', (req, res, next) => {
-
-})
-
-
-
 
 module.exports = router;
