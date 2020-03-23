@@ -7,13 +7,18 @@ const User = require('../models/User')
 
 //shorcut -> /random
 
+function randomData(array) {
+    const random = Math.floor(Math.random() * array.length);
+    return array[random];
+}
+
 router.get("/", (req, res, next) => {
     Card.find() 
     .then(data => {
         //console.log(data[0])
-        res.render("random.hbs", {data: data[Math.floor(Math.random()*data.length)]});
+        res.render("random.hbs", {data: randomData(data)});
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 })
 
 const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
