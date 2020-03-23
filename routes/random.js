@@ -8,8 +8,12 @@ const User = require('../models/User')
 //shorcut -> /random
 
 router.get("/", (req, res, next) => {
-    
-    res.render("random.hbs", {errorMessage: ''});
+    Card.find() 
+    .then(data => {
+        //console.log(data[0])
+        res.render("random.hbs", {data: data[Math.floor(Math.random()*data.length)]});
+    })
+    .catch(err => console.log(err))
 })
 
 const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn

@@ -19,17 +19,17 @@ router.get('/random/create', async (req, res, next) => {
 
 // POST create /projects (form)
 router.post('/create', async (req, res, next) => {
+	console.log("************", req.body);
 	try {
-		//console.log(req.body);
 		const {
 			title,
 			description,
-			cards
+			card
 		} = req.body;
 		await new Project({
 			title,
 			description,
-			cards
+			card
 		}).save(); //save the new object created to DB
 		res.redirect('/private/user');
 	} catch {

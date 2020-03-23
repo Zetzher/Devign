@@ -3,15 +3,14 @@
     <h1>RANDOM CARD</h1>
 
 <div>
-
-    <img src="" class="" alt="Imagen carta importada">
-    <!-- Información de la carta importada -->
-
+    {{#each data}}
+    <p>{{this.description}}</p>
+    {{/each}}
 </div>
 
 <div>
 <a href="/random" class="btn btn-warning">Again</a>
-<a href="/private/projects/random/create" class="btn btn-success">Save</a>
+<button href="/private/projects/random/create" class="btn btn-success">Save</button>
 </div>
 
 </section>
