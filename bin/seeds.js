@@ -57,7 +57,7 @@ const cards = [
     },
 
     {
-        description: 'Cuando haces break, ya no hay constinue',
+        description: 'Cuando haces break, ya no hay continue',
         type: 'A',
     },
 
@@ -72,7 +72,7 @@ const cards = [
     },
 
     {
-        description: 'Soy Aragorn extend de Araghorn new de Islidur, class de los Dunedain',
+        description: 'Soy Aragorn extend de Arathorn new de Islidur, class de los Dunedain',
         type: 'A',
     },
 
