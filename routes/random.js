@@ -7,16 +7,19 @@ const User = require('../models/User')
 
 //shorcut -> /random
 
-function randomData(array) {
-    const random = Math.floor(Math.random() * array.length);
-    return array[random];
-}
+// function randomData(array) {
+//     const random = Math.floor(Math.random() * array.length);
+//     console.log("kejfhjdbkj", array[random])
+//     return array[random];
+// }
 
 router.get("/", (req, res, next) => {
     Card.find() 
     .then(data => {
-        //console.log(data[0])
-        res.render("random.hbs", {data: randomData(data)});
+        console.log(data)
+        const random = Math.floor(Math.random() * data.length);
+        console.log("kjhgkrhtg*******", data[random]);
+        res.render("random.hbs", {data: data[random]});
     })
     .catch(err => console.log(err));
 })

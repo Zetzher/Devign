@@ -3,14 +3,13 @@
     <h1>RANDOM CARD</h1>
 
 <div>
-    {{#each data}}
-    <p>{{this.description}}</p>
-    {{/each}}
+    
+    <p>{{data.description}}</p>
+    
 </div>
 
 <div>
 <a href="/random" class="btn btn-warning">Again</a>
-<button href="/private/projects/random/create" class="btn btn-success">Save</button>
+<a href="/private/projects/random/create/{{data._id}}" class="btn btn-success">Save</a>
 </div>
-
 </section>

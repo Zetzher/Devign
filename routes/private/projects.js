@@ -11,25 +11,25 @@ const Project = require("../../models/Project");
 //shorcut -> /private/projects
 
 // GET create /projects
-router.get('/random/create', async (req, res, next) => {
-	
-		res.render('private/project/create.hbs');
-	
+router.get('/random/create/:id', async (req, res, next) => {
+	//console.log("ruta geeeeeet", req.params);
+		const cardId = req.params.id;
+		res.render('private/project/create.hbs', {cardId});
 });
 
 // POST create /projects (form)
-router.post('/create', async (req, res, next) => {
-	console.log("************", req.body);
+router.post('/create/:id', async (req, res, next) => {
+	//console.log("poooost ************", req.params.id);
+	const cardId = req.params.id
 	try {
 		const {
 			title,
 			description,
-			card
 		} = req.body;
 		await new Project({
 			title,
 			description,
-			card
+			card: cardId
 		}).save(); //save the new object created to DB
 		res.redirect('/private/user');
 	} catch {
@@ -51,7 +51,7 @@ router.post('/create', async (req, res, next) => {
 router.post('/:_id/delete', async (req, res, next) => {
 	try {
 		const id = req.params;
-		console.log(id);
+		//console.log(id);
 		await Project.findOneAndDelete(id);
 		res.redirect('/projects');
 	} catch (error) {
@@ -72,14 +72,14 @@ router.get('/:_id/edit', async (req, res, next) => {
 // POST edit /projects (form)
 router.post('/:_id/', async (req, res, next) => {
 	try {
-		console.log(req.body);
+		//console.log(req.body);
 		const {
 			id,
 			title,
 			description,
 			card
 		} = req.body;
-		console.log(id);
+		//console.log(id);
 		await Project.update({
 			_id: id //condición para encontrarlo
 		}, {
@@ -90,7 +90,7 @@ router.post('/:_id/', async (req, res, next) => {
 		});
 		res.redirect('/projects');
 	} catch (error) {
-		console.log(error);
+		//console.log(error);
 	}
 });
 
