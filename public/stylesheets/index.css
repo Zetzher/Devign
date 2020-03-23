@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
-  background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
+  background: linear-gradient(to left, #662D91, #0074BA, #00A99D);
 
 }
 
@@ -74,7 +74,8 @@ body {
 }
 
 .e_ {
-  color: #662D91;
+  color: #00A99D;
+  
 }
 
 .a {
@@ -82,11 +83,11 @@ body {
 }
 
 .s {
-  color: #00A99D;
+  color: #662D91;
 }
 
 .i {
-  color: #662D91;
+  color: #00A99D;
 }
 
 .e {
@@ -94,7 +95,7 @@ body {
 }
 
 .r {
-  color: #00A99D;
+  color: #662D91;
 }
 
 .dorso_carta {
@@ -118,7 +119,7 @@ body {
 }
 
 .try_botton {
-  background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
+  background: linear-gradient(to left, #662D91, #0074BA, #00A99D);
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 80px;
@@ -149,7 +150,7 @@ body {
 .foto_perfil_amalia {
   margin-top: 70px;
   width: 15vw;
-  border: 4px outset #662D91;
+  border: 4px outset #00A99D;
   border-radius: 20%;
 }
 
@@ -163,7 +164,7 @@ body {
 .foto_perfil_paula {
   margin-top: 70px;
   width: 15vw;
-  border: 4px outset #00A99D;
+  border: 4px outset #662D91;
   border-radius: 20%;
 }
 
