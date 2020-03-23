@@ -1,26 +1,26 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 breakpoint {
-    max-width: 100%;
-    display: inline-block;
+  max-width: 100%;
+  display: inline-block;
 }
 
 /* 2 columnas para tablets */
 @media (min-width: 420px) {
-    breakpoint {
-        max-width: 48%;
+  breakpoint {
+    max-width: 48%;
 
-    }
+  }
 }
 
 /* 4 columnas para grandes dispositivos*/
 @media (min-width: 760px) {
-    breakpoint {
-        max-width: 24%;
-    }
+  breakpoint {
+    max-width: 24%;
+  }
 }
 
 body {
@@ -28,11 +28,11 @@ body {
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
-    
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
+
 }
 
 .navbar a {
@@ -40,72 +40,217 @@ body {
   color: white;
 }
 
+
+.position {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.index_logo {
+  width: 170px;
+  margin-bottom: 70px;
+}
+
 .icon_navbar {
-    height: 50px;
-    margin-left: 20px;
+  height: 50px;
+  margin-left: 20px;
 }
 
 .position_navbar {
   word-spacing: 50px;
 }
 
+.first_article {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.first_h2_article {
+  font-size: 30px;
+}
+
+.second_h2_article {
+  font-size: 35px;
+}
+
+.e_ {
+  color: #662D91;
+}
+
+.a {
+  color: #0074BA;
+}
+
+.s {
+  color: #00A99D;
+}
+
+.i {
+  color: #662D91;
+}
+
+.e {
+  color: #0074BA;
+}
+
+.r {
+  color: #00A99D;
+}
+
+.dorso_carta {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 18vw;
+}
+
+.second_section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.second_section_h4 {
+  line-height: 60px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.try_botton {
+  background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 80px;
+  padding-right: 80px;
+  text-decoration: none;
+  color: white;
+  border-radius: 50%;
+}
+
+.third_section {
+  text-align: center;
+}
+
+.third_section h1 {
+  font-weight: 900;
+  font-size: 80px;
+}
+
+.foto_perfil_div {
+  margin-bottom: 100px;
+}
+
+.foto_perfil_div h3 {
+  margin-top: 40px;
+}
+
+.foto_perfil_amalia {
+  margin-top: 70px;
+  width: 15vw;
+  border: 4px outset #662D91;
+  border-radius: 20%;
+}
+
+.foto_perfil_julian {
+  margin-top: 70px;
+  width: 15vw;
+  border: 4px outset #0074BA;
+  border-radius: 20%;
+}
+
+.foto_perfil_paula {
+  margin-top: 70px;
+  width: 15vw;
+  border: 4px outset #00A99D;
+  border-radius: 20%;
+}
+
+.posicion_foto_perfil {
+display: flex;
+justify-content: space-evenly;
+}
+
 
 
 /*Menu toggle button*/
-#menu-btn{ 
-    position: relative; left: 1em; top: 1em;
-    width: 3em;
-    padding: 1.5em;
-    border-radius: 100%;
-    transition: all .2s ease-out;
-  }
-    /*Cursor on toggle button hover*/
-    #menu-btn:hover{ cursor: pointer; }
-    /*Changing color of hamburger lines on hover*/
-    #menu-btn:hover .menu-line{ background-color: #999999; }
-  
-    #menu-btn:active{ box-shadow: 0 0 5px black; background-color: #524a88; }
-  
-    /*Styles for the hamburger lines*/
-    .menu-btn-line{ 
-      height: .5em; 
-      background-color: #00FFCA; 
-      margin-bottom: .5em; 
-    }
-    /*No margin-bottom for last hamburger line.*/
-    .menu-btn-line:last-child{ margin-bottom: 0; }
-  
-  /*List container*/
-  #menu{ 
-    position: relative; 
-    top: 7em; left: 1em; 
-    border: .5em solid #00FFCA; 
-    width: 10em;
-    padding: 1em;
-  }
-    /*List*/
-    #menu ul{ padding: 0; margin: 0; }
-      /*List items*/
-      #menu ul li{ 
-        list-style-type: none; 
-        left: 0; 
-        padding: .5em;
-        color: #00FFCA;
-        transition: all .3s ease-out;
-      }
-      /*Subscribe link*/
-      #menu ul li:last-child{
-        margin-top: .5em;
-        padding-top: 1em;
-        border-top: 1px solid #00FFCA;
-      } 
-        /*Cursor and text undelrine on hover*/
-        #menu ul li:hover{
-          cursor: pointer;
-          text-decoration: underline;
-        }
-        /*Background and text colour change on click*/
-        #menu ul li:active{
-          background-color: #00FFCA;
-          color: rgba(52, 73, 94,1.0);
-        }
+#menu-btn {
+  position: relative;
+  left: 1em;
+  top: 1em;
+  width: 3em;
+  padding: 1.5em;
+  border-radius: 100%;
+  transition: all .2s ease-out;
+}
+
+/*Cursor on toggle button hover*/
+#menu-btn:hover {
+  cursor: pointer;
+}
+
+/*Changing color of hamburger lines on hover*/
+#menu-btn:hover .menu-line {
+  background-color: #999999;
+}
+
+#menu-btn:active {
+  box-shadow: 0 0 5px black;
+  background-color: #524a88;
+}
+
+/*Styles for the hamburger lines*/
+.menu-btn-line {
+  height: .5em;
+  background-color: #00FFCA;
+  margin-bottom: .5em;
+}
+
+/*No margin-bottom for last hamburger line.*/
+.menu-btn-line:last-child {
+  margin-bottom: 0;
+}
+
+/*List container*/
+#menu {
+  position: relative;
+  top: 7em;
+  left: 1em;
+  border: .5em solid #00FFCA;
+  width: 10em;
+  padding: 1em;
+}
+
+/*List*/
+#menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+/*List items*/
+#menu ul li {
+  list-style-type: none;
+  left: 0;
+  padding: .5em;
+  color: #00FFCA;
+  transition: all .3s ease-out;
+}
+
+/*Subscribe link*/
+#menu ul li:last-child {
+  margin-top: .5em;
+  padding-top: 1em;
+  border-top: 1px solid #00FFCA;
+}
+
+/*Cursor and text undelrine on hover*/
+#menu ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*Background and text colour change on click*/
+#menu ul li:active {
+  background-color: #00FFCA;
+  color: rgba(52, 73, 94, 1.0);
+}
