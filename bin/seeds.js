@@ -7,7 +7,6 @@ const dbName = 'devign-project';
 mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true });
 Card.collection.drop();
 Project.collection.drop();
-User.collection.drop();
 
 const cards = [
 
@@ -166,7 +165,7 @@ Card.create(cards, (err) => {
 
 /*
 const createProjects = projects.map(user => {
-    const newProject = new Project(user.project);
+    const newProject = new Project(user.projects);
     return newProject.save()
     .then(project => {
       return project.title;

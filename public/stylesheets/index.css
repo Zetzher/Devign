@@ -26,6 +26,7 @@ breakpoint {
 .navbar {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     margin-bottom: 10px;
     background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
     
@@ -42,7 +43,7 @@ breakpoint {
 }
 
 .position_navbar {
-    word-spacing: 5px;
+  word-spacing: 50px;
 }
 
 
