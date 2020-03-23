@@ -10,11 +10,11 @@ const router = express.Router();
 const Card = require("../../models/Card");
 
 router.get('/random/create/:id', async (req, res, next) => {
-	//console.log("ruta geeeeeet", req.params);
+	console.log("ruta geeeeeet", req.params);
 		const userId = req.params.id;
 		const card = await User.findById(userId); 
 		
-		res.render('private/project/create.hbs', {user});
+		res.render('private/project/create.hbs', {card});
 });
 
 router.post('/create/:id', async (req, res, next) => {
@@ -107,4 +107,3 @@ router.get('/:_id/edit', async (req, res, next) => {
 
 
 module.exports = router;
-

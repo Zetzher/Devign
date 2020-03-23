@@ -7,7 +7,8 @@ const router = express.Router();
 const Project = require("../../models/Project");
 const Card = require("../../models/Card")
 
-/////////////////////////////////////////////////////////////////////////////////
+// const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
+// router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
 //shorcut -> /private/projects
 
