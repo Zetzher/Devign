@@ -31,31 +31,31 @@ router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 //Shorcut /auth
 
 router.get("/signup", (req, res, next) => {
-    res.render("auth/signup.hbs", {errorMessage: ''});
+    res.render("auth/signup.hbs", {errorMessage: 'Complete fields'});
 })
 
 router.post("/signup", (req, res, next) => {
     const {username, email, password, repeatPassword} = req.body;
 
     if(!username || !password) {
-        res.render("signup", {errorMessage: "Please complete the fields"})
+        res.render("auth/signup", {errorMessage: "Please complete the fields"})
         return;
     }
 
     if(password !== repeatPassword) {
-        res.render("signup", {errorMessage: "Passwords don't match"})
+        res.render("auth/signup", {errorMessage: "Passwords don't match"})
         return;
     }
 
     if(email === '' || password === '') {
-        res.render("signup", {errorMessage: "Please enter email and password"});
+        res.render("auth/signup", {errorMessage: "Please enter email and password"});
         return;
     }
 
     User.findOne({username})
     .then(user => {
         if (user) {
-            res.render("signup", {errorMessage: "The userName already exists"})
+            res.render("auth/signup", {errorMessage: "The userName already exists"})
             return;
         }
 
