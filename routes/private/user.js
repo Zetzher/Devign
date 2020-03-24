@@ -14,5 +14,8 @@ router.get('/', (req, res, next) => {
 	const user = req.session.currentUser;
 	res.render('private/user.hbs', {user}); 
 });
+//const card = await Card.findById(cardId);
+
+
 
 module.exports = router;
