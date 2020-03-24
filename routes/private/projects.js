@@ -22,8 +22,6 @@ router.get('/random/create/:id', async (req, res, next) => {
 		res.render('private/project/create.hbs', {card});
 });
 
-
-
 // POST create /projects (form)
 router.post('/create/:id', async (req, res, next) => {
 	//console.log("poooost ************", req.params.id);
