@@ -1,61 +1,61 @@
+<section class="main">
+    
 <section>
-
-    <div class="private_image">
-            <img src="/images/profile-default.png" class="col-lg-2" alt="Imagen del usuario">
-        
-            <!--Usar multer para que el usario pueda subir una imagen suya-->
-            <img src="{{imgPath}}" alt="">
-            <h3>Name: {{user.username}}</h3>
-          
-       
-
+    <div class="container-fluid">
+            <div class="private-img">
+                <img src="/images/profile-default.png" class="col-lg-2" alt="Imagen del usuario">
+                {{!-- <img src="user.imgPath" alt="">  --}}
+           
+                <h1 class="col-lg-6">{{user.username}}</h1>
+            </div>
     </div>
-
 </section>
 
-    <section class="info_perfil">
-    <h2>My Projects</h2>
-    <div>
-        <!--Información de la base de datos-->
-        <ul>
+<section class="container-fluid">
+    <div class="div-title">
+        <h2>My Projects</h2>
+    </div>
+    <div class="container">
            {{#each user.projects}}
-                <!--Cada li una carpeta de proyecto -debería ser llamando al objeto {{userProjects}}-->
-                <li>
-                    <h3>Project Title: {{this.title}}</h3>
-                    <h4>Project description: {{this.description}}</h4>
+            <div class="projects-list">
+                    <button class="btn btn-secondary col-lg-2">{{this.title}}</button>
+                <div class="edit-project-btn col-lg-1"> 
                     <a class="btn btn-dark" href="/project/{{_id}}/edit">Edit</a>
+                </div>
+                <div class="delete-project-btn">
                     <form action="project/{{this._id}}/delete" method="post">
                         <button class="btn btn-danger">Delete</button>
                     </form>
-                </li>
+                </div>
+            </div>
            {{/each}}
-        </ul>
-        <div>
-            <a class="btn btn-info" href="/random">Create Project</a>
+        <div class="btn-new">
+            <a class="btn btn-secondary col-lg-2" href="/random">+</a>
         </div>
     </div>
-
-    <h2>My Cards</h2>
-    <div>
-        <!--Información de la base de datos-->
-        <div>
-            <ul>
-                {{#each user.cards}}
-                    <!--Cada li una card -debería ser llamando al objeto {{userCards}}-->
-                    <li>
-                        <p>Message Card: {{this.description}}</p>
-                        <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
-                        <form action="card/{{this._id}}/delete" method="post">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
-        <div>
-            <a class="btn btn-info" href="/private/cards/create">Create Card</a>
+</section>
+<section class="container-fluid">
+    <div class="div-title">
+        <h2>My Cards</h2>
+    </div>
+    <div class="container">
+            {{#each user.cards}}
+            <div class="cards-list">
+                    <button class="btn btn-secondary col-lg-1">{{this.description}}</button>
+                <div class="edit-card-btn col-lg-1">
+                    <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
+                </div>
+                <div class="delete-card-btn">
+                    <form action="card/{{this._id}}/delete" method="post">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        <div class="btn-new">
+            <a class="btn btn-secondary col-lg-1" href="/private/cards/create">+</a>
         </div>
     </div>
-
+</section>
 
 </section>

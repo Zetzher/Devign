@@ -1,0 +1,36 @@
+/* COLORS */
+/* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
+/* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
+
+.main {
+    background-image: url(../images/profile-background.png);
+}
+
+.private-img {
+    padding-top: 60px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+    color: #71c1da;
+}
+
+.div-title {
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.btn-new {
+    padding: 5px;
+}
