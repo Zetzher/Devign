@@ -34,9 +34,7 @@ body {
 .navbar {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
   background: linear-gradient(to left, #662D91, #00A99D);
-
 }
 
 .navbar a {
