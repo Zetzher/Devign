@@ -86,7 +86,7 @@ router.post("/login", (req, res, next) => {
     User.findOne({username})
         .then(user => {
             if (!user) {
-                res.render("login", {errorMessage: "There is no user with that username"})
+                res.render("auth/login", {errorMessage: "There is no user with that username"})
             }
             if (bcrypt.compareSync(password, user.password)) { // user.password es la hashseada
                 req.session.currentUser = user;
