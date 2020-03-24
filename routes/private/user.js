@@ -10,15 +10,24 @@ const User = require("../../models/user");
 //Shorcut -> /private/user
 
 router.get('/', (req, res, next) => {
-//	console.log("current user", req.session.currentUser)
+	//	console.log("current user", req.session.currentUser)
 
-const user = req.session.currentUser;
+	const user = req.session.currentUser;
 
-User.findById(req.session.currentUser._id)
-.populate('projects')
-.then(user => {
-	res.render('private/user.hbs', {user}); 
-})
+	User.findById(req.session.currentUser._id)
+		.populate('projects')
+		.populate('cards')
+		.exec((err, user) => {
+			if (err) {
+			  next(err);
+			  return;
+			}
+		
+			res.render('private/user.hbs', {
+				user: user
+			});
+		})
+
 });
 //const card = await Card.findById(cardId);
 
