@@ -12,8 +12,8 @@ const mongoose = require('mongoose');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-mongoose // process.env.MONGODB_URI  mongodb://localhost/devign-project
-  .connect('mongodb://localhost/devign-project', {
+mongoose
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

@@ -4,8 +4,8 @@ const router = express.Router();
 
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
-const Project = require("../../models/Project");
-const Card = require("../../models/Card")
+const Project = require("../../models/project");
+const Card = require("../../models/card")
 
 // const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
 // router.use((req, res, next)=> userIsLoggedIn(req, res, next));

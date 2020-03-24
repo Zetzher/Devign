@@ -26,21 +26,35 @@
 
 <section class="second_section">
    
-    <div>
-        <img src="/images/dorso_trigger.png" class="dorso_carta" alt="Carta ejemplo">
-    </div>
+     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <!-- front content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-purple-300px.png" alt="logo-green">
+                    </article>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-green-300px.png" alt="logo-green">
+                        <h3>Devign</h3>
+                        <p>{{data.description}}</p>
+                         <div class="try_bottom_div">
+                            <a href="/random" id="again">Try!</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 
     <article class="second_section_article">
 
-        <h4 class="second_section_h4">
-            Devign is here as a tool to help with development ideas.<br>
-            We introduce the first collection designed for web development.<br>
-            Our cards will allow you to break<br> 
-            your linear thoughts and be more creative.
-        </h4>
-        
-        <div class="try_bottom_div">
-            <a href="/random" class="try_botton">Try!</a>
+        <div class="second_section_h4">
+            <p>Devign is here as a tool to help with development ideas.</p>
+            <p>We introduce the first collection designed for web development.</p>
+            <p>Our cards will allow you to break</p>
+            <p>your linear thoughts and be more creative.</p>
         </div>
 
     </article>
@@ -77,12 +91,4 @@
 
 </div>
 
-<div>
-    <h1>
-    <a href="/auth/login" class="login_buttons">Login!</a>
-    </h1>
-    <h1>
-    <a href="/auth/signup" class="signup_buttons">Signup!</a>
-    </h1>
-</div>
 </section>

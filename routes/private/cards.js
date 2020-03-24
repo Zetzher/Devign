@@ -7,7 +7,7 @@ const router = express.Router();
 
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
-const Card = require("../../models/Card");
+const Card = require("../../models/card");
 
 router.get('/random/create/:id', async (req, res, next) => {
 	console.log("ruta geeeeeet", req.params);
