@@ -33,11 +33,13 @@ router.post('/create/:id', async (req, res, next) => {
 			title,
 			description,
 		} = req.body;
+		const newProject =
 		await new Project({
 			title,
 			description,
 			card: cardId
 		}).save(); //save the new object created to DB
+		res.render('private/user.hbs', newProject);
 		res.redirect('/private/user');
 	} catch {
 		res.render('project/create.hbs');
