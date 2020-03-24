@@ -3,7 +3,7 @@ var router = express.Router();
 
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;      
-const User = require('../models/User'); 
+const User = require('../models/user'); 
 
 router.get('/logout', (req, res, next) => {
     if (!req.session.currentUser) {
