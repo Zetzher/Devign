@@ -35,7 +35,7 @@ router.get("/signup", (req, res, next) => {
 })
 
 router.post("/signup", (req, res, next) => {
-    const {username, email, password, repeatPassword} = req.body
+    const {username, email, password, repeatPassword} = req.body;
 
     if(!username || !password) {
         res.render("signup", {errorMessage: "Please complete the fields"})
