@@ -80,7 +80,7 @@ router.post("/login", (req, res, next) => {
     const {username, password} = req.body;
 
     if(username === "" || password === "") {
-        res.render("login", {errorMessage: "Please, complete all the fields"})
+        res.render("auth/login", {errorMessage: "Please, complete all the fields"})
     }
 
     User.findOne({username})
@@ -94,7 +94,7 @@ router.post("/login", (req, res, next) => {
             }
 
             else {
-                res.render("login", {errorMessage: "Incorrect password"})
+                res.render("auth/login", {errorMessage: "Incorrect password"})
             }
 
         })
