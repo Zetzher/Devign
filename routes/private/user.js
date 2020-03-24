@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
 // router.use((req, res, next)=> userIsLoggedIn(req, res, next));

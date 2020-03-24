@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-const Card = require('../models/Card')
-const Project = require('../models/Project')
-const User = require('../models/User')
+const Card = require('../models/card')
+const Project = require('../models/project')
+const User = require('../models/user')
 
 //shorcut -> /random
 
