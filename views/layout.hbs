@@ -11,6 +11,8 @@
         {{!-- Bootstrap --}}
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        {{!-- Hamburguer NavbarResponsive --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {{!-- CSS Customized --}}
         <link rel='stylesheet' href='/stylesheets/animation-card.css'/>
         <link rel='stylesheet' href='/stylesheets/profile.css'/>
@@ -25,18 +27,21 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <title>{{title}}</title>
     </head>
-
+ {{!-- class="topnav" id="myTopnav" --}}
     <body>
 
         <nav class="navbar fixed-top">
 
  <a href="/"><img src="/images/navbaricon-white.png" class="icon_navbar" alt="Logo Devign"></a>
             
-            <div class="position_navbar">
+            <div class="position_navbar topnav" id="myTopnav">
                 <a href="/auth/login">Login</a>
                 <a href="/auth/signup">SignUp</a>
                 <a href="/random">Random</a>
                 <a href="/auth/logout">Logout</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
             </div>
         </nav>
         
@@ -54,10 +59,16 @@
 </section>
 
         <footer>
-            Contact info:
-            Devign (Develop and Design)
-            Fake Street, 20
-            devign@gmail.com
+            <div>
+                <h3 class="contact_info">
+                     Contact info: <br>
+                </h3>
+                <h4 class="details_info">
+                    Devign (Develop and Design)<br>
+                    Fake Street, 20<br>
+                    devign@gmail.com<br>
+                </h4>
+            </div>
         </footer>
         {{!-- Style JS --}}
         <script type="text/javascript" src="/scripts/hamburguer.js"></script>
