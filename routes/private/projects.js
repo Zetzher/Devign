@@ -5,7 +5,8 @@ const router = express.Router();
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
 const Project = require("../../models/project");
-const Card = require("../../models/card")
+const Card = require("../../models/card");
+const User = require("../../models/user");
 
 // const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
 // router.use((req, res, next)=> userIsLoggedIn(req, res, next));
@@ -33,16 +34,17 @@ router.post('/create/:id', async (req, res, next) => {
 			title,
 			description,
 		} = req.body;
-		const newProject =
+		const newProject=
 		await new Project({
 			title,
 			description,
 			card: cardId
 		}).save(); //save the new object created to DB
-		res.render('private/user.hbs', newProject);
+		await User.findByIdAndUpdate(req.session.currentUser._id, {$push: {projects: newProject._id}})
 		res.redirect('/private/user');
-	} catch {
-		res.render('project/create.hbs');
+	} catch (error){ 
+		console.log(error)
+		//res.render('private/project/create.hbs');
 	}
 });
 
