@@ -18,8 +18,11 @@ router.get('/random/create/:id', async (req, res, next) => {
 		const cardId = req.params.id;
 		const card = await Card.findById(cardId); 
 		
+
 		res.render('private/project/create.hbs', {card});
 });
+
+
 
 // POST create /projects (form)
 router.post('/create/:id', async (req, res, next) => {
@@ -40,6 +43,9 @@ router.post('/create/:id', async (req, res, next) => {
 		res.render('project/create.hbs');
 	}
 });
+
+
+//Necesitamos que el proyecto se vincule al usuario.
 
 // GET :id /projects (details)
 /*router.get('/:_id', async (req, res, next) => {
