@@ -7,77 +7,45 @@ const router = express.Router();
 
 /////////////////////////////////////////////////////////////////////////////////
 //Require model
+const Project = require("../../models/project");
 const Card = require("../../models/card");
+const User = require("../../models/user");
 
-router.get('/random/create/:id', async (req, res, next) => {
-	console.log("ruta geeeeeet", req.params);
-		const userId = req.params.id;
-		const card = await User.findById(userId); 
-		
-		res.render('private/project/create.hbs', {card});
-});
-
-router.post('/create/:id', async (req, res, next) => {
-	//console.log("poooost ************", req.params.id);
-	const userId = req.params.id
-	console.log("user id?", userId);
-	// try {
-	// 	const {
-	// 		title,
-	// 		description,
-	// 	} = req.body;
-	// 	await new Project({
-	// 		title,
-	// 		description,
-	// 		card: cardId
-	// 	}).save(); //save the new object created to DB
-	// 	res.redirect('/private/user');
-	// } catch {
-	// 	res.render('project/create.hbs');
-	// }
-});
-
-// GET private/user
-//router.get('/create', /*async*/ (req, res, next) => {
-    
-    
-  //  res.render("private/card/create")
-    /*try {
-		const cards = await Card.find(); //save in const the model
-		res.render('user', {
-			cards
-		}); //('view route', {object DB})
-	} catch (error) {
-		next(error);
-	}*/
-//});
+//await User.findByIdAndUpdate(req.session.currentUser._id, {$push: {cards: newProject._id}})
 
 //shortcut = /private/cards
 
 // GET create /cards
-router.get('/create',  (req, res, next) => {
-    
-    //Acceder a la url private/cards/create
+router.get('/create', async (req, res, next) => {
+	// const cardId = req.params.id;
+	// const card = await Card.findById(cardId);
+	//Acceder a la url private/cards/create
+	const userId = req.session.currentUser._id;
+	res.render('private/card/create.hbs', {
+		userId
+	});
 
-		res.render('private/card/create.hbs');
-	
 });
 
 // POST create /cards (form)
-router.post('/create', async (req, res, next) => {
+router.post('/create/:id', async (req, res, next) => {
+	const user = req.params.id;
 	try {
 		//console.log(req.body);
 		const {
-			title,
-			description,
-			card
+			description
 		} = req.body;
-		await new Card({
-			title,
-			description,
-			card
-		}).save(); //save the new object created to DB
-		res.redirect('/cards');
+		const newCard =
+			await new Card({
+				description,
+				userId: user
+			}).save(); //save the new object created to DB
+		await User.findByIdAndUpdate(req.session.currentUser._id, {
+			$push: {
+				cards: newCard._id
+			}
+		})
+		res.redirect('/private/user');
 	} catch {
 		res.render('card/create.hbs');
 	}
@@ -95,13 +63,13 @@ router.post('/create', async (req, res, next) => {
 
 // POST delete /cards
 router.post('/:_id/delete', async (req, res, next) => {
-	
+
 });
 
 // GET edit /cards (details)
 router.get('/:_id/edit', async (req, res, next) => {
 	//Para comprobar si funciona la ruta, solo hay que poner /edit en vez de /:_id/edit
-		res.render('private/card/edit', card);
+	res.render('private/card/edit', card);
 });
 
 

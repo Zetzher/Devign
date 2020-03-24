@@ -22,6 +22,7 @@
                 <!--Cada li una carpeta de proyecto -debería ser llamando al objeto {{userProjects}}-->
                 <li>
                     <h3>Project Title: {{this.title}}</h3>
+                    <h4>Project description: {{this.description}}</h4>
                     <a class="btn btn-dark" href="/project/{{_id}}/edit">Edit</a>
                     <form action="project/{{this._id}}/delete" method="post">
                         <button class="btn btn-danger">Delete</button>
@@ -42,7 +43,7 @@
                 {{#each user.cards}}
                     <!--Cada li una card -debería ser llamando al objeto {{userCards}}-->
                     <li>
-                        <p>Message Card: {{this.cards.description}}</p>
+                        <p>Message Card: {{this.description}}</p>
                         <a class="btn btn-dark" href="/card/{{_id}}/edit">Edit</a>
                         <form action="card/{{this._id}}/delete" method="post">
                             <button class="btn btn-danger">Delete</button>

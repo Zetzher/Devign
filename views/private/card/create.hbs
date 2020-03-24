@@ -3,9 +3,9 @@
     <h2>Creating a new card</h2>
 
     <div>
- <form action="/card/create/{{user._id}}" method="post">
-            <input name="type" type="text" placeholder="Metaphor, joke, quote" required><br>
-            <textarea name="message" type="text" placeholder="My card message" required></textarea>
+ <form action="/private/cards/create/{{userId}}" method="post">
+            <input name="description" type="text" placeholder="Metaphor, joke, quote" required><br>
+            <!--<textarea name="description" type="text" placeholder="My card message" required></textarea>-->
             <button type="submit" class="btn btn-success">Save</button>
             <a href="/private/user" class="btn btn-warning">Return</a>
         </form>
