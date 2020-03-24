@@ -96,7 +96,7 @@
 
 @media (min-width: 980px) and (max-width: 1400px) {
 	.card-form {
-		width: 50%;
+		width: 100%;
 	}
 }
 
