@@ -8,8 +8,8 @@ const Project = require("../../models/project");
 const Card = require("../../models/card");
 const User = require("../../models/user");
 
-// const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
-// router.use((req, res, next)=> userIsLoggedIn(req, res, next));
+const userIsLoggedIn = require("../../middlewares/auth-mid").userIsLoggedIn
+router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
 //shorcut -> /private/projects
 

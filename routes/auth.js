@@ -8,13 +8,12 @@ const User = require('../models/user');
 router.get('/logout', (req, res, next) => {
     if (!req.session.currentUser) {
         
-        console.log("no haaaay");
       res.redirect('/');
       return;
     }
   
     req.session.destroy((err) => {
-        console.log("si haay, pero la destruimos :D")
+        
       if (err) {
         next(err);
         return;
