@@ -239,6 +239,33 @@ body {
   border-radius: 20px;
 }
 
+.ironhack_logo {
+  width: 8vw;
+}
+
+footer {
+  background: #333333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.contact_info {
+  font-size: 25px;
+  letter-spacing: 7px;
+}
+
+.details_info {
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+
+
+
 /*Menu toggle button*/
 #menu-btn {
   position: relative;
