@@ -4,19 +4,22 @@ const Project = require('../models/Project');
 const User = require('../models/User');
 
 const dbName = 'devign-project';
-mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb://localhost/${dbName}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 Card.collection.drop();
 Project.collection.drop();
 
 const cards = [
 
     {
-        description: 'Tu a Frontend y yo a UX',
+        description: 'Tú a Frontend y yo a UX.',
         type: 'A',
     },
 
     {
-        description: 'Soy Backman!',
+        description: '¡Soy Bugman!',
         type: 'A',
     },
 
@@ -26,7 +29,7 @@ const cards = [
     },
 
     {
-        description: 'Todas las routes llevan a Back',
+        description: 'Todas las Routes conducen a Back.',
         type: 'A',
     },
 
@@ -36,12 +39,12 @@ const cards = [
     },
 
     {
-        description: 'Todo lo que alcanza la vista, es css',
+        description: 'Todo lo que alcanza la vista, es CSS',
         type: 'A',
     },
 
     {
-        description: 'Console.log, príntalos todos!',
+        description: 'Console.log, ¡príntalos todos!',
         type: 'A',
     },
 
@@ -51,12 +54,12 @@ const cards = [
     },
 
     {
-        description: 'Si entras en bucle tómate un break, luego continue y return',
+        description: 'Si entras en bucle tómate un break, luego continue y return.',
         type: 'A',
     },
 
     {
-        description: 'Cuando haces break, ya no hay continue',
+        description: 'Cuando haces break, ya no hay continue.',
         type: 'A',
     },
 
@@ -76,7 +79,7 @@ const cards = [
     },
 
     {
-        description: 'Lo juro por los ES7 nuevos y viejos',
+        description: 'Lo juro por los ES7 nuevos y viejos.',
         type: 'A',
     },
 
@@ -91,7 +94,7 @@ const cards = [
     },
 
     {
-        description: 'El pájaro sin alas y la función sin semicolon',
+        description: 'El pájaro sin alas y la función sin semicolon.',
         type: 'A',
     },
 
@@ -101,7 +104,7 @@ const cards = [
     },
 
     {
-        description: 'Iterar es humano, "recursivar" es divino',
+        description: 'Iterar es humano, "recursivar" es divino.',
         type: 'A',
     },
 
@@ -111,54 +114,61 @@ const cards = [
     },
 
     {
-        description: '¿Y si empezamos por tu back y terminamos por el front? Menos rutina!',
+        description: '¿Y si empezamos por tu back y terminamos por mi front? ¡Menos rutina!',
         type: 'A',
     },
 
     {
-        description: 'Unexpected',
+        description: 'Unexpected token',
         type: 'A',
     },
 
     {
-        description: 'Ooh look at him... It"s a bug!',
+        description: 'Ooh look at this... It"s a bug!',
         type: 'A',
     },
 
     {
-        description: 'El software es como el sexo, mejor si es libre y gratis',
+        description: 'El software es como el sexo, mejor si es libre y gratis.',
         type: 'A',
     },
 
     {
-        description: 'Solo hay dos clases de lenguaje de programación: aquellos de los que están siempre quejándose, y aquellos que nadie usa',
+        description: 'Solo hay dos clases de lenguaje de programación: aquellos de los que están siempre quejándose, y aquellos que nadie usa.',
         type: 'A',
     },
 
     {
-        description: 'No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo',
+        description: 'No te preocupes si no funciona bien. Si todo estuviera correcto, serías despedido de tu trabajo.',
         type: 'A',
     },
 
     {
-        description: 'Programar es el arte de crear errores en documentos de texto vacío',
+        description: 'Programar es el arte de crear errores en documentos de texto vacío.',
         type: 'A',
     },
 
     {
-        description: 'Decir que Java es estupendo porque funciona con todos los sistemas operativos, es como decir que el sexo anal es estupendo porque funciona con todos los géneros',
+        description: 'Decir que Java es estupendo porque funciona con todos los sistemas operativos, es como decir que el sexo anal es estupendo porque funciona con todos los géneros.',
         type: 'A',
     },
 
     {
-        description: 'Un programador tiene un problema y decide usar expresiones regulares; ahora tiene dos problemas',
+        description: 'Un programador tiene un problema y decide usar expresiones regulares. Ahora tiene dos problemas.',
+        type: 'A',
+    },
+    
+    {
+        description: '¿De dónde vienen los niños? Pues está claro que de un merge.',
         type: 'A',
     }
 
 ]
 
 Card.create(cards, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${cards.length} cards`)
-  mongoose.connection.close();
+    if (err) {
+        throw (err)
+    }
+    console.log(`Created ${cards.length} cards`)
+    mongoose.connection.close();
 });
