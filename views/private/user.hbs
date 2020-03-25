@@ -22,7 +22,8 @@
            {{#each user.projects}}
            <div class="projects">
                 <div class="projects-list inline-block">
-                    {{this.title}}
+                    <h4>Title: {{this.title}}</h4>
+                    <h5>{{this.description}}</h5>
                 </div>
                 <div class="inline-block">
                     <a class="" href="/projects/{{_id}}/edit">Edit</a>
