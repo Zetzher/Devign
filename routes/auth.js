@@ -76,7 +76,7 @@ router.post("/signup", (req, res, next) => {
 })
 
 router.get("/login", (req, res, next) => {
-    res.render("auth/login.hbs", {errorMessage: 'Please complete the fields'});
+    res.render("auth/login.hbs", {errorMessage: ''});
 })
 
 router.post("/login", (req, res, next) => {
