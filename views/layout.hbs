@@ -38,11 +38,12 @@
     <h1 class="logo"><a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="logo devign"></a></h1></h1>
    <ul class="nav">
            {{#if isUserNotLogged}}
+                <li class="navlink"><a href="/random">Random</a></li class="navlink">
                 <li class="navlink"><a href="/auth/login">Login</a></li>
                 <li class="navlink"><a href="/auth/signup">SignUp</a></li class="navlink">
-                <li class="navlink"><a href="/random">Random</a></li class="navlink">
             {{/if}}
                {{#if isUserLogged}}
+               <li class="navlink"><a href="/random">Random</a></li class="navlink">
                 <li class="navlink"><a href="/private/user">Profile</a></li class="navlink">
                 <li class="navlink"><a href="/auth/logout">Logout</a></li class="navlink">
             {{/if}}
