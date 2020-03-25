@@ -1,28 +1,27 @@
 <section class="bg-gradient">
-	{{#if errorMessage}}
-		<p class="error-message">{{ errorMessage }}</p>
-	{{/if}}
 	<div class="pagewrap flip-vertical-fwd">
 		<form class="form" id="form" action="/auth/signup" method="POST">
 			<h3 class="form__title">Signup</h3>
+				{{#if errorMessage}}
+					<p class="error-message">{{ errorMessage }}</p>
+				{{/if}}
 			<div class="container">
-				<input class="container__input" type="text" id="username" name="username" required>
+				<input class="container__input" type="text" id="username" name="username" value="" required>
 				<label id="userLabel" for="username" class="container__label">Username</label>
 			</div>
 			<div class="container">
-				<input class="container__input" type="text" id="email" name="email" required>
+				<input class="container__input" type="text" id="email" name="email" value="" required>
 				<label id="emailLabel" for="email" class="container__label">Email</label>
 			</div>
 			<div class="container">
-				<input class="container__input" type="password" id="pass" name="password" required>
+				<input class="container__input" type="password" id="pass" name="password" value="" required>
 				<label id="passLabel" for="pass" class="container__label">Password</label>
 			</div>
 			<div class="container">
-				<input class="container__input" type="password" id="repeat-pass" name="repeatPassword"
-					required>
+				<input class="container__input" type="password" id="repeat-pass" name="repeatPassword" value="" required>
 				<label id="repeat-passLabel" for="repeat-pass" class="container__label">Repeat Password</label>
 			</div>
-			<button class="form__submit" id="submit" type="submit">Signup</button>
+			<button class="form__submit" id="submit" type="submit" value="signup">Signup</button>
 			<br>
 			<p>Already registered? <a href="/auth/login">Login!</a></p>
 		</form>

@@ -72,14 +72,24 @@ router.post('/:_id/delete', async (req, res, next) => {
 });
 
 // GET edit /projects (details)
+//router.get('/:_id/edit', async (req, res, next) => {
+//	try {
+//		const project = await Project.findOne(req.params);
+//		res.render('project/edit.hbs', project);
+//	} catch (error) {
+//		next(error);
+//	}
+//});
 router.get('/:_id/edit', async (req, res, next) => {
 	try {
 		const project = await Project.findOne(req.params);
-		res.render('project/edit.hbs', project);
+		res.render('private/project/edit.hbs', {project});
 	} catch (error) {
 		next(error);
 	}
 });
+
+
 
 // POST edit /projects (form)
 router.post('/:_id/', async (req, res, next) => {

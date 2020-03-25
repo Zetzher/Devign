@@ -34,7 +34,7 @@ router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 //Shorcut /auth
 
 router.get("/signup", (req, res, next) => {
-    res.render("auth/signup.hbs", {errorMessage: 'Complete fields'});
+    res.render("auth/signup.hbs", {errorMessage: ''});
 })
 
 router.post("/signup", (req, res, next) => {
@@ -76,7 +76,7 @@ router.post("/signup", (req, res, next) => {
 })
 
 router.get("/login", (req, res, next) => {
-    res.render("auth/login.hbs", {errorMessage: 'Please complete the fields'});
+    res.render("auth/login.hbs", {errorMessage: ''});
 })
 
 router.post("/login", (req, res, next) => {
