@@ -7,6 +7,7 @@
         {{!-- CSS Reset --}}
         <link rel='stylesheet' href='/stylesheets/reset.css' />
          {{!-- Google font --}}
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
         {{!-- Bootstrap --}}
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
@@ -34,11 +35,21 @@
 
  <a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="Logo Devign"></a>
             
+            {{#if isUserLogged}}
+                    <h1 class="welcome">Bienvenido a Devign {{userInfo.username}}!</h1>
+                {{/if}}
+
             <div class="position_navbar topnav" id="myTopnav">
+
+            {{#if isUserNotLogged}}
                 <a href="/auth/login">Login</a>
                 <a href="/auth/signup">SignUp</a>
+            {{/if}}
                 <a href="/random">Random</a>
+            {{#if isUserLogged}}
+                <a href="/private/user">Perfil</a>
                 <a href="/auth/logout">Logout</a>
+            {{/if}}
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -56,9 +67,13 @@
 -->
 <section class="layout_body">
         {{{body}}}
+        
+        
 </section>
 
         <footer>
+
+       
             <div>
                 <h3 class="contact_info">
                      Contact info: <br>

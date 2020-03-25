@@ -25,7 +25,7 @@ mongoose
   .catch(err => {
     console.error('Error connecting to mongo', err);
   });
-  
+
 ////////// No se si hace falta porque el debug no se usa
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -46,7 +46,9 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -55,20 +57,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 // cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
 // store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
 app.use(session({
-    secret: "basic-auth-secret",
-    cookie: { maxAge: 6000000 },
-    resave: true,
-    saveUninitialized: true,
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection,
-      ttl: 24 * 60 * 60 // 1 day
-    })
+  secret: "basic-auth-secret",
+  cookie: {
+    maxAge: 6000000
+  },
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
 }));
+
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    let user = req.session.currentUser;
+    res.locals.userInfo = user;
+    console.log(res.locals.userInfo);
+    res.locals.isUserLogged = true;
+  } else {
+    res.locals.isUserNotLogged = true;
+  }
+  next()
+})
 
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
@@ -78,12 +96,12 @@ app.use('/private/projects', privProjectsRouter);
 app.use('/private/user', privUserRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

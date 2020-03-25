@@ -27,7 +27,7 @@ router.get("/project/create", (req, res, next) => {
 
 router.post("/project/create", async (req, res, next) => {
 
-    res.render("project/create", {message:"Project created successfully!"})
+    res.render("project/create", {message:"Project created successfully!"});
 
 });
 
