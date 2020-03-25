@@ -63,9 +63,9 @@ router.post('/create/:id', async (req, res, next) => {
 router.post('/:_id/delete', async (req, res, next) => {
 	try {
 		const id = req.params;
-		//console.log(id);
-		await Project.findOneAndDelete(id);
-		res.redirect('/projects');
+		console.log(id);
+		await Project.findOneAndRemove(id);
+		res.redirect('/private/user');
 	} catch (error) {
 		next(error);
 	}
