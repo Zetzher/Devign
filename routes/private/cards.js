@@ -66,8 +66,8 @@ router.post('/create/:id', async (req, res, next) => {
 router.post('/:id/delete', async (req, res, next) => {
 	//console.log("id de la card: ", req.params);
 	//const {id} = req.params;
-	//	console.log("id de la card 2: ", {id});
-	//	//console.log("id de la card: ", id);
+		console.log("id de la card 2: ", {id});
+		console.log("id de la card: ", id);
 	try {
 		const id = req.params.id;
 		await Card.findOneAndDelete(id);
