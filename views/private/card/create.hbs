@@ -1,14 +1,64 @@
-<section>
+<section class="bg-green">
+    <div class="cardwrap">
+        <div>
+            <h1>Creating a new card</h1>
+        </div>
 
-    <h2>Creating a new card</h2>
-
-    <div>
- <form action="/private/cards/create/{{userId}}" method="post">
-            <input name="description" type="text" placeholder="Metaphor, joke, quote" required><br>
-            <!--<textarea name="description" type="text" placeholder="My card message" required></textarea>-->
-            <button type="submit" class="btn btn-success">Save</button>
-            <a href="/private/user" class="btn btn-warning">Return</a>
-        </form>
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <div class="front">
+                <!-- front content -->
+                <article class="card-form">
+                    <img src="/images/logo-devign-green-300px.png" alt="logo-green">
+                </article>
+            </div>
+            <div class="back">
+                <!-- back content -->
+                <article class="card-form purple">
+                    <img src="/images/logo-devign-purple-300px.png" alt="logo-purple">
+                    <h3>Devign</h3>
+                    <form action="/private/cards/create/{{userId}}" method="post">
+                        <textarea maxlength="80" name="description" type="textarea" placeholder="Write here your inspirational sentence"
+                            required></textarea>
+                    </form>
+                    <div class="button">
+                        <a type="submit" id="save">Save</a>
+                        <a href="/private/user" id="again">Return</a>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 
+</section>
+
+<section class="bg-purple">
+    <div class="cardwrap">
+        <div>
+            <h1>RANDOM CARD</h1>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <!-- front content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-purple-300px.png" alt="logo-green">
+                    </article>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-green-300px.png" alt="logo-green">
+                        <h3>Devign</h3>
+                        <p>{{data.description}}</p>
+                        <div class="button">
+                            <a href="/random" id="again">Again</a>
+                            <a href="/private/projects/random/create/{{data._id}}" id="save">Save</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
