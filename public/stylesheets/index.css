@@ -32,8 +32,6 @@ body {
 }
 
 .navbar {
-  display: flex;
-  flex-direction: row;
   background: linear-gradient(to left, #662D91, #00A99D);
 }
 
@@ -59,6 +57,10 @@ body {
   display: none;
 }
 
+.icono_perfil {
+  width: 60px;
+}
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
@@ -78,7 +80,6 @@ body {
     position: relative;
     -webkit-animation: fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
   }
 
 
@@ -86,14 +87,12 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-
   }
 
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
-
   }
 }
 
@@ -104,6 +103,7 @@ body {
 .welcome {
   font-size: 24px;
   font-family: 'Source Code Pro', monospace;
+  color: white;
 }
 
 .bobble:hover {
@@ -405,6 +405,7 @@ body {
 .second_section {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -413,7 +414,7 @@ body {
 .second_section_h4 {
   line-height: 40px;
   font-size: 20px;
-  margin-top: 120px;
+  margin-top: 60px;
   margin-left: 20px;
   text-align: left;
 }
@@ -449,21 +450,21 @@ body {
 
 .foto_perfil_amalia {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #00A99D;
   border-radius: 20px;
 }
 
 .foto_perfil_julian {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #0074BA;
   border-radius: 20px;
 }
 
 .foto_perfil_paula {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #662D91;
   border-radius: 20px;
 }
@@ -471,6 +472,7 @@ body {
 .posicion_foto_perfil {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .glasses_amalia {
@@ -531,17 +533,17 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-top: 55px;
-  padding-bottom: 55px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .contact_info {
-  font-size: 25px;
+  font-size: 18px;
   letter-spacing: 7px;
 }
 
 .details_info {
-  font-size: 18px;
+  font-size: 13px;
   letter-spacing: 5px;
 }
 

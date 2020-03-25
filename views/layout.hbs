@@ -35,19 +35,23 @@
 
  <a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="Logo Devign"></a>
             
-            {{#if isUserLogged}}
-                    <h1 class="welcome">Bienvenido a Devign {{userInfo.username}}!</h1>
-                {{/if}}
-
+            {{!-- {{#if isUserLogged}}
+                    <h1 class="welcome"></h1>{{userInfo.username}}</h1>
+                {{/if}} --}}
+          
             <div class="position_navbar topnav" id="myTopnav">
 
             {{#if isUserNotLogged}}
                 <a href="/auth/login">Login</a>
                 <a href="/auth/signup">SignUp</a>
+                 <a href="/random">Random</a>
             {{/if}}
-                <a href="/random">Random</a>
             {{#if isUserLogged}}
-                <a href="/private/user">Perfil</a>
+             {{/if}}
+                
+                {{#if isUserLogged}}
+                <a href="/private/user"><img src="{{userInfo.imgPath}}" class="icono_perfil" alt="imagen usuario"></a>
+  
                 <a href="/auth/logout">Logout</a>
             {{/if}}
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
