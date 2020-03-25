@@ -2,22 +2,15 @@
     
 <section>
     <div class="container">
-        
+        <h1 class="username">Welcome {{user.username}}</h1>
             <form action="/private/user" method="post" enctype="multipart/form-data">
-                <div class="">
+                <div class="position_form">
                     <img src="{{user.imgPath}}" class="col-lg-2 img-user" alt="Imagen del usuario"> 
-                </div>
-                    
-                    <div class="private-img"> 
                     <input type="file" name="photo">
-                    {{!-- </div>  
-                    <div> --}}
                     <input type="submit" value="SAVE">
-                    </div>                     
+                </div>                  
             </form>
-            <div class="div-name"> 
-                <h1 class="">{{user.username}}</h1>
-            </div>
+            
     </div>
 </section>
 

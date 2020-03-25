@@ -18,7 +18,6 @@ router.get('/random/create/:id', async (req, res, next) => {
 	//console.log("ruta geeeeeet", req.params);
 		const cardId = req.params.id;
 		const card = await Card.findById(cardId); 
-		
 
 		res.render('private/project/create.hbs', {card});
 });
