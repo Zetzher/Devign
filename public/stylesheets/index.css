@@ -58,7 +58,7 @@ body {
 }
 
 .icono_perfil {
-  width: 30px;
+  width: 60px;
 }
 
 
@@ -449,21 +449,21 @@ body {
 
 .foto_perfil_amalia {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #00A99D;
   border-radius: 20px;
 }
 
 .foto_perfil_julian {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #0074BA;
   border-radius: 20px;
 }
 
 .foto_perfil_paula {
   margin-top: 70px;
-  width: 15vw;
+  width: 200px;
   border: 4px outset #662D91;
   border-radius: 20px;
 }
@@ -471,6 +471,7 @@ body {
 .posicion_foto_perfil {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .glasses_amalia {
