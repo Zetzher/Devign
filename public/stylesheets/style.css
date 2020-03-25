@@ -3,14 +3,17 @@
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 /* Black:#333333 */
 
+/*Tipografía*/
 body {
   font-family: 'Quicksand', sans-serif;
 }
 
+/*Espacio para la navbar fixed*/
 .layout_body {
   padding-top: 68px;
 }
 
+/*Backgrounds + Color text*/
 .bg-purple {
   background-color: #662D91;
   color: #aca8e5;
@@ -43,4 +46,44 @@ body {
 
 .txt-black {
   color: #333333;
+}
+
+/*Botones de cards*/
+.button {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-content: center;
+	text-align: center;
+}
+
+.btn-green {
+	background: #00A99D;
+	color: #74ebd5;
+	margin-top: 1.2em;
+	border: none;
+	border-radius: 7px;
+	padding: 0.9em 4em;
+	letter-spacing: 1.2px;
+	font-size: 0.98rem;
+	text-transform: uppercase;
+}
+
+.btn-purple {
+	background: #662D91;
+	color: #aca8e5;
+	margin-top: 1.2em;
+	border: none;
+	border-radius: 7px;
+	padding: 0.9em 4em;
+	letter-spacing: 1.2px;
+	font-size: 0.98rem;
+	text-transform: uppercase;
+}
+
+a:hover.btn {
+    text-decoration:none;
+    pointer-events: visiblePainted;
+    cursor: default;
+    color: white;
 }
