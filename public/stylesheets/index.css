@@ -81,7 +81,7 @@ body {
 
   }
 
-  
+
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
@@ -101,132 +101,158 @@ body {
   display: inline-block;
 }
 
+.welcome {
+  font-size: 24px;
+  font-family: 'Source Code Pro', monospace;
+}
+
 .bobble:hover {
   -webkit-animation: wobble-hor-bottom 1s infinite both;
-	        animation: wobble-hor-bottom 1s infinite both;
+  animation: wobble-hor-bottom 1s infinite both;
 }
 
 @-webkit-keyframes wobble-hor-bottom {
+
   0%,
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
+
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
-            transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
   }
+
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
-            transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
   }
+
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
-            transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
   }
+
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
-            transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
   }
+
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
-            transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
   }
 }
+
 @keyframes wobble-hor-bottom {
+
   0%,
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
+
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
-            transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
   }
+
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
-            transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
   }
+
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
-            transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
   }
+
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
-            transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
   }
+
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
-            transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
   }
 }
 
 
 #icon_navbar_animation:hover {
   -webkit-animation: pulsate-bck 1s ease-in-out infinite both;
-	        animation: pulsate-bck 1s ease-in-out infinite both;
+  animation: pulsate-bck 1s ease-in-out infinite both;
 }
 
 @-webkit-keyframes pulsate-bck {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
+
   50% {
     -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
+
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
+
 @keyframes pulsate-bck {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
+
   50% {
     -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
+
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 
 .shake:hover {
   -webkit-animation: vibrate-1 0.3s linear infinite both;
-          animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
 }
 
 @-webkit-keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
+    transform: translateZ(-80px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
+
 @keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
+    transform: translateZ(-80px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
@@ -234,53 +260,64 @@ body {
 @-webkit-keyframes vibrate-1 {
   0% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
+
   20% {
     -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
   }
+
   40% {
     -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
   }
+
   60% {
     -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
   }
+
   80% {
     -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
   }
+
   100% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
 }
+
 @keyframes vibrate-1 {
   0% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
+
   20% {
     -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
   }
+
   40% {
     -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
   }
+
   60% {
     -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
   }
+
   80% {
     -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
   }
+
   100% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
 }
 
