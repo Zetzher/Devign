@@ -87,6 +87,7 @@ body {
   }
 
 
+
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
@@ -356,18 +357,31 @@ body {
   word-spacing: 50px;
 }
 
+.background_first_section {
+  background-image: url("/images/devign-fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .first_article {
   text-align: center;
   margin-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 .first_h2_article {
   font-size: 60px;
   margin-bottom: 40px;
+  padding-top: 400px;
+  font-weight: 500;
+  color: white;
 }
 
 .second_h2_article {
   font-size: 40px;
+  font-weight: 500;
+  color: white;
 }
 
 .e_ {
