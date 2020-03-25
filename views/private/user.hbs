@@ -3,15 +3,20 @@
 <section>
     <div class="container">
         
-            <div class="private-img">
-                <img src="{{user.imgPath}}" class="col-lg-2" alt="Imagen del usuario"> 
-            </div>
             <form action="/private/user" method="post" enctype="multipart/form-data">
-    <input type="file" name="photo">
-    <input type="submit" value="SAVE">
-</form>
+                <div class="">
+                    <img src="{{user.imgPath}}" class="col-lg-2 img-user" alt="Imagen del usuario"> 
+                </div>
+                    
+                    <div class="private-img"> 
+                    <input type="file" name="photo">
+                    {{!-- </div>  
+                    <div> --}}
+                    <input type="submit" value="SAVE">
+                    </div>                     
+            </form>
             <div class="div-name"> 
-                <h1 class="col-lg-6">{{user.username}}</h1>
+                <h1 class="">{{user.username}}</h1>
             </div>
     </div>
 </section>
@@ -27,9 +32,9 @@
                     {{this.title}}
                 </div>
                 <div class="inline-block">
-                    <a class="" href="/project/{{_id}}/edit">Edit</a>
+                    <a class="" href="/projects/{{_id}}/edit">Edit</a>
                     <form class="inline-block" action="project/{{this._id}}/delete" method="post">
-                        <button class="" >Delete</button>
+                        <button type="submit" class="" >Delete</button>
                     </form>
                 </div>
             </div>
@@ -53,7 +58,7 @@
                 </div>
                 <div class="cards-align">
                     <form class="" action="cards/{{this._id}}/delete" method="post">
-                        <button class="">Delete</button>
+                        <button type="submit" class="">Delete</button>
                     </form>
                 </div>
             </div>
