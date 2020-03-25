@@ -13,8 +13,11 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         {{!-- Hamburguer NavbarResponsive --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        {{!-- CSS Customized --}}
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./style.css">{{!-- CSS Customized --}}
         <link rel='stylesheet' href='/stylesheets/animation-card.css'/>
         <link rel='stylesheet' href='/stylesheets/profile.css'/>
         <link rel='stylesheet' href='/stylesheets/random-card.css' />
@@ -31,33 +34,25 @@
  {{!-- class="topnav" id="myTopnav" --}}
     <body>
 
-        <nav class="navbar fixed-top">
-
- <a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="Logo Devign"></a>
-            
-            {{!-- {{#if isUserLogged}}
-                    <h1 class="welcome"></h1>{{userInfo.username}}</h1>
-                {{/if}} --}}
-          
-            <div class="position_navbar topnav" id="myTopnav">
-
-            {{#if isUserNotLogged}}
-                <a href="/auth/login">Login</a>
-                <a href="/auth/signup">SignUp</a>
-                 <a href="/random">Random</a>
+<header>
+    <h1 class="logo"><a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="logo devign"></a></h1></h1>
+   <ul class="nav">
+           {{#if isUserNotLogged}}
+                <li class="navlink"><a href="/auth/login">Login</a></li>
+                <li class="navlink"><a href="/auth/signup">SignUp</a></li class="navlink">
+                <li class="navlink"><a href="/random">Random</a></li class="navlink">
             {{/if}}
-           
-                
-            {{#if isUserLogged}}
-                <a href="/private/user"><img src="{{userInfo.imgPath}}" class="icono_perfil" alt="imagen usuario"></a>
-                <a href="/private/user">Profile</a>
-                <a href="/auth/logout">Logout</a>
+               {{#if isUserLogged}}
+                <li class="navlink"><a href="/private/user">Profile</a></li class="navlink">
+                <li class="navlink"><a href="/auth/logout">Logout</a></li class="navlink">
             {{/if}}
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-            </div>
-        </nav>
+        </ul>
+         <div class="burger">
+            <i class="fas fa-bars">
+                </i>
+        </div>
+ 
+</header>
         
 
 

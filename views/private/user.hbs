@@ -2,10 +2,14 @@
     
 <section>
     <div class="container">
+        
             <div class="private-img">
-                <img src="/images/profile-default.png" class="col-lg-2" alt="Imagen del usuario">
-                {{!-- <img src="user.imgPath" alt="">  --}}
+                <img src="{{user.imgPath}}" class="col-lg-2" alt="Imagen del usuario"> 
             </div>
+            <form action="/private/user" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo">
+    <input type="submit" value="SAVE">
+</form>
             <div class="div-name"> 
                 <h1 class="col-lg-6">{{user.username}}</h1>
             </div>
