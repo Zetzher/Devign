@@ -5,16 +5,17 @@ const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;      
 const User = require('../models/user'); 
 
+
+
 router.get('/logout', (req, res, next) => {
     if (!req.session.currentUser) {
         
-        console.log("no haaaay");
       res.redirect('/');
       return;
     }
   
     req.session.destroy((err) => {
-        console.log("si haay, pero la destruimos :D")
+        
       if (err) {
         next(err);
         return;
@@ -23,6 +24,8 @@ router.get('/logout', (req, res, next) => {
       res.redirect('/');
     });
 });
+
+
 
 // estas dos líneas le dicen a router que por favor use userIsNotLoggedIn
 const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
@@ -100,5 +103,7 @@ router.post("/login", (req, res, next) => {
         })
         .catch(err => console.log("error finding the user: " + err))
 })
+
+
 
 module.exports = router;

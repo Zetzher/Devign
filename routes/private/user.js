@@ -4,8 +4,8 @@ const router = express.Router();
 
 const User = require("../../models/user");
 
-// const userIsLoggedIn = require("../middlewares/auth-mid").userIsLoggedIn
-// router.use((req, res, next)=> userIsLoggedIn(req, res, next));
+const userIsLoggedIn = require("../../middlewares/auth-mid").userIsLoggedIn
+router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
 //Shorcut -> /private/user
 
@@ -29,8 +29,5 @@ router.get('/', (req, res, next) => {
 		})
 
 });
-//const card = await Card.findById(cardId);
-
-
 
 module.exports = router;

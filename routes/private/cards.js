@@ -11,7 +11,8 @@ const Project = require("../../models/project");
 const Card = require("../../models/card");
 const User = require("../../models/user");
 
-//await User.findByIdAndUpdate(req.session.currentUser._id, {$push: {cards: newProject._id}})
+const userIsLoggedIn = require("../../middlewares/auth-mid").userIsLoggedIn
+router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 
 //shortcut = /private/cards
 
