@@ -60,6 +60,9 @@ body {
 
 .icono_perfil {
   width: 60px;
+  position: absolute;
+  right: 110%;
+  top: 45%;
 }
 
 
