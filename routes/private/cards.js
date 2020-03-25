@@ -63,14 +63,10 @@ router.post('/create/:id', async (req, res, next) => {
 });*/
 
 // POST delete /cards
-router.post('/:id/delete', async (req, res, next) => {
-	//console.log("id de la card: ", req.params);
-	//const {id} = req.params;
-		console.log("id de la card 2: ", {id});
-		console.log("id de la card: ", id);
+router.post('/:_id/delete', async (req, res, next) => {
 	try {
-		const id = req.params.id;
-		await Card.findOneAndDelete(id);
+		const id = req.params;
+		await Card.findOneAndRemove(id);
 		res.redirect('/private/user');
 	} catch(error) {
 		next(error);
