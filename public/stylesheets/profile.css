@@ -2,35 +2,61 @@
 /* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 
-.main {
-    background-image: url(../images/profile-background.png);
-}
+
 
 .private-img {
-    padding-top: 60px;
-    padding-left: 40px;
-    display: flex;
-    flex-direction: row;
-    color: #71c1da;
+    padding: 30px;
+}
+
+.div-name {
+    text-align: center;
 }
 
 .div-title {
-    padding-left: 30px;
-    padding-top: 40px;
+    text-align: start;
 }
 
-.projects-list {
+.inline-block {
+    display: inline-block;
+}
+
+.cards-align {
     display: flex;
-    flex-direction: row;
-    padding: 5px;
+    flex-direction:
 }
 
-.cards-list {
+.projects {
     display: flex;
-    flex-direction: row;
-    padding: 5px;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    background-color: #662D91;
 }
 
-.btn-new {
-    padding: 5px;
+.cards {
+    height: 300px;
+    width: 200px;
+    border-radius: 5%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background-color: #00A99D;
+}
+
+.btn-new-project {
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    background-color: #662D91;
+}
+
+.btn-new-card {
+    height: 300px;
+    width: 200px;
+    border-radius: 5%;
+    color: white;
+    background-color: #00A99D;
 }
