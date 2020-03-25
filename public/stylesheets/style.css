@@ -1,6 +1,46 @@
+/* COLORS */
 /* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
+/* Black:#333333 */
 
 body {
   font-family: 'Quicksand', sans-serif;
+}
+
+.layout_body {
+  padding-top: 72px;
+}
+
+.bg-purple {
+  background-color: #662D91;
+  color: #aca8e5;
+}
+
+.bg-blue {
+  background-color: #0074BA;
+  color: #71c1da;
+}
+
+.bg-green {
+  background-color: #00A99D;
+  color: #74ebd5;
+}
+
+.bg-lg-purple {
+  background-color: #aca8e5;
+  color: #662D91;
+}
+
+.bg-lg-blue {
+  background-color: #71c1da;
+  color: #0074BA;
+}
+
+.bg-lg-green {
+  background-color: #74ebd5;
+  color: #00A99D;
+}
+
+.txt-black {
+  color: #333333;
 }

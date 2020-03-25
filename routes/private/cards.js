@@ -63,15 +63,26 @@ router.post('/create/:id', async (req, res, next) => {
 });*/
 
 // POST delete /cards
-router.post('/:_id/delete', async (req, res, next) => {
-
+router.post('/:id/delete', async (req, res, next) => {
+	//console.log("id de la card: ", req.params);
+	//const {id} = req.params;
+	//	console.log("id de la card 2: ", {id});
+	//	//console.log("id de la card: ", id);
+	try {
+		const id = req.params.id;
+		await Card.findOneAndDelete(id);
+		res.redirect('/private/user');
+	} catch(error) {
+		next(error);
+	}
 });
 
-// GET edit /cards (details)
-router.get('/:_id/edit', async (req, res, next) => {
-	//Para comprobar si funciona la ruta, solo hay que poner /edit en vez de /:_id/edit
-	res.render('private/card/edit', card);
-});
+
+//// GET edit /cards (details)
+//router.get('/:_id/edit', async (req, res, next) => {
+//	//Para comprobar si funciona la ruta, solo hay que poner /edit en vez de /:_id/edit
+//	res.render('private/card/edit', card);
+//});
 
 
 
