@@ -50,20 +50,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// // para los middleware
-// app.use(require('node-sass-middleware')({
-//   src:  path.join(__dirname, 'public'),
-//   dest: path.join(__dirname, 'public'),
-//   sourceMap: true
-// }));
-
 // inicio de sesion
 // secret: Used to sign the session ID cookie (required)
 // cookie: Object for the session ID cookie. In this case, we only set the maxAge attribute, which configures the expiration date of the cookie (in milliseconds).
 // store: Sets the session store instance. In this case, we create a new instance of connect-mongo, so we can store the session information in our Mongo database.
 app.use(session({
     secret: "basic-auth-secret",
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 6000000 },
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({

@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: String,
   email: String,
   password: String,
-  imgPath: { type: String, default: '../public/images/profile-default.png' },
+  imgPath: { type: String, default: '/images/profile-default.png' },
   projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
   cards: [{ type: Schema.Types.ObjectId, ref: 'Card' }]
 }, {
