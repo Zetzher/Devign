@@ -82,7 +82,8 @@ router.post('/:_id/delete', async (req, res, next) => {
 //});
 router.get('/:_id/edit', async (req, res, next) => {
 	try {
-		const project = await Project.findOne(req.params);
+		const project = await Project.findOne(req.params).populate('card');
+		console.log(project)
 		res.render('private/project/edit.hbs', {project});
 	} catch (error) {
 		next(error);
@@ -92,7 +93,7 @@ router.get('/:_id/edit', async (req, res, next) => {
 
 
 // POST edit /projects (form)
-router.post('/:_id/', async (req, res, next) => {
+router.post('/edit', async (req, res, next) => {
 	try {
 		//console.log(req.body);
 		const {
@@ -101,16 +102,15 @@ router.post('/:_id/', async (req, res, next) => {
 			description,
 			card
 		} = req.body;
+		console.log(req.body)
 		//console.log(id);
-		await Project.update({
+		await Project.findByIdAndUpdate({
 			_id: id //condición para encontrarlo
-		}, {
-			$set: { //se entregan los nuevos valores
+		}, { 
 				title,
 				description
-			}
 		});
-		res.redirect('/projects');
+		res.redirect('/private/user');
 	} catch (error) {
 		//console.log(error);
 	}
