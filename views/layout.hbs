@@ -36,7 +36,7 @@
  <a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="Logo Devign"></a>
             
             {{#if isUserLogged}}
-                    <h1 class="welcome">Bienvenido a Devign {{userInfo.username}}!</h1>
+                    <h1 class="welcome">Bienvenido {{userInfo.username}}!</h1>
                 {{/if}}
 
             <div class="position_navbar topnav" id="myTopnav">
@@ -45,9 +45,11 @@
                 <a href="/auth/login">Login</a>
                 <a href="/auth/signup">SignUp</a>
             {{/if}}
-                <a href="/random">Random</a>
             {{#if isUserLogged}}
                 <a href="/private/user">Perfil</a>
+                {{/if}}
+                 <a href="/random">Random</a>
+                {{#if isUserLogged}}
                 <a href="/auth/logout">Logout</a>
             {{/if}}
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
