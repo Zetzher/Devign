@@ -73,7 +73,7 @@ app.use((req, res, next) => {
   if (req.session.currentUser) {
     let user = req.session.currentUser;
     res.locals.userInfo = user;
-    console.log(res.locals.userInfo);
+    //console.log(res.locals.userInfo);
     res.locals.isUserLogged = true;
   } else {
     res.locals.isUserNotLogged = true;
