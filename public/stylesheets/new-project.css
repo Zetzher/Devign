@@ -1,0 +1,32 @@
+/* COLORS */
+/* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
+/* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
+/* Black:#333333 */
+
+.bg-lg-blue form.project-form input {
+	height: auto;
+	width: 95%;
+	border-radius: 8px;
+	border:none;
+	background-color: #71c1da;
+	color: #333333;
+	font-size: 16px;
+	font-weight: 500;
+	padding-bottom: 3%;
+}
+
+.back .card-form .project-form textarea {
+	height: 100px;
+	width: 95%;
+	border-radius: 8px;
+	border: 1px solid #0074BA;
+	background-color: transparent;
+	color: #333333;
+	font-size: 16px;	
+}
+
+article.bg-lg-blue p {
+	font-size: 18px;
+	color: #0074BA;
+	padding: 3% auto;
+}
