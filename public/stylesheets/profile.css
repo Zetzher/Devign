@@ -32,7 +32,8 @@ div.img-user {
     border-radius: 50%;
     background-size: 100% auto;
 }
-/* .position_form {
+
+.position_form {
     margin-bottom: 30px;
 }
 
@@ -44,8 +45,8 @@ div.img-user {
     background: linear-gradient(to left, #662D91, #00A99D);
     margin-left: 25px;
     padding: 10px 20px;
-    border-radius: 20%;
-} */
+    border-radius: 10%;
+} 
 
 .projects {
     display: flex;
@@ -58,7 +59,6 @@ div.img-user {
 
 .projects-list {
     padding: 10px 20px;
-    /* padding-left: 20px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,7 +89,6 @@ div.img-user {
 }
 
 .card-box {
-    /* padding-left: 20px; */
     display: flex;
     flex-direction: row;
     justify-content: start;
