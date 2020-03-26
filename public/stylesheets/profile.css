@@ -19,7 +19,9 @@
 
 .img-user {
     width: 250px;
-    padding-top: 30px;
+    margin-top: 30px;
+    border-radius: 25%;
+    border: 1px solid black;
 }
 
 .username {
