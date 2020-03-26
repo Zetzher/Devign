@@ -37,6 +37,13 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.burguer {
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 46.8%;
+}
+
 .menu_bar {
   display: none;
 }
