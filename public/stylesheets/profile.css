@@ -19,7 +19,9 @@
 
 .img-user {
     width: 250px;
-    padding-top: 30px;
+    margin-top: 30px;
+    border-radius: 25%;
+    border: 1px solid black;
 }
 
 .username {
@@ -38,6 +40,17 @@
 
 .inline-block {
     display: inline-block;
+}
+
+#input_form_image {
+    display:none;
+}
+
+#input_form_save {
+    background: linear-gradient(to left, #662D91, #00A99D);
+    margin-left: 25px;
+    padding: 10px 20px;
+    border-radius: 20%;
 }
 
 .projects {
