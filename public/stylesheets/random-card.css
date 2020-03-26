@@ -66,8 +66,6 @@
 	text-align: center;
 }
 
-/*Para borrar: save y again - substituidos en style.css por btn-purple y btn-green*/
-
 @media (min-width: 600px) {
 	.card-form {
 		max-width: 100%;
