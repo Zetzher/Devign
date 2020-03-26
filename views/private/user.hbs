@@ -1,23 +1,23 @@
 <section>
-    <div class="container">
+    <div class="container profile-form">
         <h1 class="username">Welcome {{user.username}}</h1>
-            <form action="/private/user" method="post" enctype="multipart/form-data">
-                <div class="position_form">
-                     <label>
-                        <img src="{{user.imgPath}}" class="img-user" alt="Imagen del usuario"> 
-                        <input type="file" id="input_form_image" name="photo">
-                        <input type="submit" id="input_form_save" value="SAVE">
-                        </label>
-                    
-                </div>                  
-            </form>
-            
+        <form action="/private/user" method="post" enctype="multipart/form-data">
+            <div class="position_form">
+                <label>
+                    <img src="{{user.imgPath}}" class="img-user" alt="Imagen del usuario">
+                    <input type="file" id="input_form_image" name="photo">
+                    <input type="submit" id="input_form_save" value="SAVE">
+                </label>
+
+            </div>
+        </form>
+
     </div>
 </section>
 {{!-- Two containers: My projects and My Cards --}}
-<section>
+<section class="el-papi">
     {{!-- My Projects --}}
-    <article class="container">
+    <article class="contenedor">
         {{!-- Title --}}
         <div class="div-title txt-purple">
             <h2>My Projects</h2>
@@ -48,35 +48,38 @@
         </a>
     </article>
     {{!-- My Cards  --}}
-    <article class="container">
+    <article class="contenedor">
         {{!-- Title  --}}
         <div class="div-title txt-green">
             <h2>My Cards</h2>
         </div>
         {{!-- Card folders  --}}
-        <div class="">
+
+        <div class="card-box">
             {{#each user.cards}}
             <div class="cards">
-                <div class="">
-                    {{this.description}}
-                </div>
-                {{!-- Delete cards  --}}
                 <div class="cards-align">
                     <form class="" action="cards/{{this._id}}/delete" method="post">
                         <button type="submit" class="projects-list bg-green border-0 rounded-circle">
-                            <h2 class="mb-0 pr-3 pt-2">x</h2>
+                            <h2 class="">x</h2>
                         </button>
                     </form>
                 </div>
+                <div class="card-list">
+                    <img src="/images/navbaricon-white.png" alt="logo-white">
+                    <p>{{this.description}}</p>
+                </div>
+                {{!-- Delete cards  --}}
             </div>
             {{/each}}
             {{!-- Add cards  --}}
             <a class="" href="/private/cards/create">
-                <div class="">
+                <div class="cards card-btn">
                     <h1>+</h1>
                 </div>
             </a>
-
         </div>
+
+
     </article>
 </section>

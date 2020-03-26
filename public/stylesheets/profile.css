@@ -3,9 +3,14 @@
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 /* Black:#333333 */
 
-.container {
+.contenedor {
     margin: 0;
     padding: 0;
+}
+
+.contenedor {
+    justify-content: center;
+    padding-bottom: 40px;
 }
 
 .btn-project {
@@ -29,21 +34,15 @@
     border: 1px solid black;
 }
 
-.username {
-    padding-top:
-}
-
 .div-name {
     text-align: start;
   
 }
 
 .div-title {
-    text-align: start;
-    padding: 20px;
+    text-align: center;
+    padding-bottom: 20px;
 }
-
-
 
 #input_form_image {
     display:none;
@@ -66,11 +65,24 @@
 }
 
 .projects-list {
-    padding: 10px;
-    padding-left: 20px;
+    padding: 10px 20px;
+    /* padding-left: 20px; */
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.card-list {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-list > img {
+    width: 40%;
+    padding: 10% 0%;
 }
 
 .cards {
@@ -79,19 +91,45 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     color: white;
     background-color: #00A99D;
+    margin: 10px;
+}
+
+.card-box {
+    /* padding-left: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.card-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards button {
     justify-items: flex-end;
 }
 
-.btn-new-card {
-    height: 300px;
-    width: 200px;
-    border-radius: 5%;
-    color: white;
-    background-color: #00A99D;
+.el-papi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .card-box {
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .btn-project {
+    padding: 10px 20px;
+  }
+  
 }
