@@ -17,8 +17,9 @@ router.use((req, res, next)=> userIsLoggedIn(req, res, next));
 router.get('/random/create/:id', async (req, res, next) => {
 	//console.log("ruta geeeeeet", req.params);
 		const cardId = req.params.id;
+		//console.log("cardsId", cardId);
 		const card = await Card.findById(cardId); 
-
+		//console.log("caaard:", card);
 		res.render('private/project/create.hbs', {card});
 });
 
