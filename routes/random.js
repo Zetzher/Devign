@@ -21,9 +21,9 @@ router.get("/", (req, res, next) => {
 // const userIsNotLoggedIn = require("../middlewares/auth-mid").userIsNotLoggedIn
 // router.use((req, res, next)=> userIsNotLoggedIn(req, res, next));
 
-//router.get("/project/create", (req, res, next) => {
+// router.get("/project/create", (req, res, next) => {
 //    res.render("project/create");
-//})
+// })
 
 //router.post("/project/create", async (req, res, next) => {
 
