@@ -1,67 +1,79 @@
-<section class="main">
-    
 <section>
     <div class="container">
         <h1 class="username">Welcome {{user.username}}</h1>
-            <form action="/private/user" method="post" enctype="multipart/form-data">
-                <div class="position_form">
-                    <img src="{{user.imgPath}}" class="col-lg-2 img-user" alt="Imagen del usuario"> 
-                    <input type="file" name="photo">
-                    <input type="submit" value="SAVE">
-                </div>                  
-            </form>
-            
+        <form action="/private/user" method="post" enctype="multipart/form-data">
+            <div class="position_form">
+                <img src="{{user.imgPath}}" class="col-lg-2 img-user rounded-circle" alt="Imagen del usuario">
+                <input type="file" name="photo" id="file" class="custom-file-input">
+                <label for="file">Choose a file</label>
+                <input type="submit" value="SAVE">
+            </div>
+        </form>
     </div>
 </section>
-
-<section class="container-fluid">
-    <div class="div-title">
-        <h2>My Projects</h2>
-    </div>
-    <div class="">
-           {{#each user.projects}}
-           <div class="projects">
-                <div class="projects-list inline-block">
-                    <h4>Title: {{this.title}}</h4>
-                    <h5>{{this.description}}</h5>
+{{!-- Two containers: My projects and My Cards --}}
+<section>
+    {{!-- My Projects --}}
+    <article class="container">
+        {{!-- Title --}}
+        <div class="div-title txt-purple">
+            <h2>My Projects</h2>
+        </div>
+        {{!-- Project folders, edit button --}}
+        {{#each user.projects}}
+        <a class="btn btn-project" href="/private/projects/{{id}}/edit">
+            <div class="projects">
+                <div class="projects-list">
+                    <h4 class="mb-0">{{this.title}}</h4>
                 </div>
-                <div class="inline-block">
-                    <a class="" href="/private/projects/{{id}}/edit">Edit</a>
-                    <form class="inline-block" action="projects/{{this._id}}/delete" method="post">
-                        <button type="submit" class="" >Delete</button>
+                {{!-- Delete button  --}}
+                <div>
+                    <form action="projects/{{this._id}}/delete" method="post">
+                        <button type="submit" class="projects-list bg-purple border-0 rounded-circle">
+                            <h2 class="mb-0 pr-3 pt-2">x</h2>
+                        </button>
                     </form>
                 </div>
             </div>
-    </div>
-           {{/each}}
-        <div class="btn-new-project">
-            <a class="" href="/random">+</a>
+        </a>
+        {{/each}}
+        {{!-- Add project folder  --}}
+        <a class="btn btn-project" href="/random">
+            <div class="projects projects-list">
+                <h1>+</h1>
+            </div>
+        </a>
+    </article>
+    {{!-- My Cards  --}}
+    <article class="container">
+        {{!-- Title  --}}
+        <div class="div-title txt-green">
+            <h2>My Cards</h2>
         </div>
-    </div>
-</section>
-<section class="container-fluid">
-    <div class="div-title">
-        <h2>My Cards</h2>
-    </div>
-    <div class="">
-    <div class="trying">
+        {{!-- Card folders  --}}
+        <div class="">
             {{#each user.cards}}
             <div class="cards">
                 <div class="">
                     {{this.description}}
                 </div>
+                {{!-- Delete cards  --}}
                 <div class="cards-align">
                     <form class="" action="cards/{{this._id}}/delete" method="post">
-                        <button type="submit" class="">Delete</button>
+                        <button type="submit" class="projects-list bg-green border-0 rounded-circle">
+                            <h2 class="mb-0 pr-3 pt-2">x</h2>
+                        </button>
                     </form>
                 </div>
             </div>
             {{/each}}
-    </div>
-        <div class="btn-new-card">
-            <a class="" href="/private/cards/create">+</a>
-        </div>
-    </div>
-</section>
+            {{!-- Add cards  --}}
+            <a class="" href="/private/cards/create">
+                <div class="">
+                    <h1>+</h1>
+                </div>
+            </a>
 
+        </div>
+    </article>
 </section>

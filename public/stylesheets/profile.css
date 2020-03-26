@@ -4,7 +4,12 @@
 /* Black:#333333 */
 
 .container {
-    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-project {
+    width: 360px;
 }
 
 .position_form {
@@ -19,43 +24,45 @@
 
 .img-user {
     width: 250px;
-    padding-top: 30px;
 }
 
 .username {
-    padding-top: 30px;
+    padding-top:
 }
 
 .div-name {
     text-align: start;
-    padding: 20px;
+  
 }
 
 .div-title {
     text-align: start;
-    padding-top: 60px;
+    padding: 20px;
 }
 
-.inline-block {
-    display: inline-block;
-}
+
 
 .projects {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    padding: 20px;
     color: white;
     background-color: #662D91;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.projects-list {
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .cards {
     height: 300px;
     width: 200px;
-    border-radius: 5%;
-    padding: 15px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,18 +70,14 @@
     background-color: #00A99D;
 }
 
-.btn-new-project {
-    margin: 10px;
-    padding: 20px;
-    color: white;
-    background-color: #662D91;
+.cards button {
+    justify-items: flex-end;
 }
 
 .btn-new-card {
     height: 300px;
     width: 200px;
     border-radius: 5%;
-    margin-bottom: 15px;
     color: white;
     background-color: #00A99D;
 }

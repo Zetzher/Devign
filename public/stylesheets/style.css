@@ -48,6 +48,14 @@ body {
   color: #333333;
 }
 
+.txt-purple {
+  color: #662D91;
+}
+
+.txt-green {
+  color: #00A99D;
+}
+
 /*Botones de cards*/
 .button {
 	display: flex;
