@@ -17,31 +17,23 @@
     width: 360px;
 }
 
-.position_form {
-    margin-bottom: 30px;
-}
-
-.trying {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.img-user {
-    width: 250px;
-    margin-top: 30px;
-    border-radius: 25%;
-    border: 1px solid black;
-}
-
-.div-name {
-    text-align: start;
-  
-}
-
 .div-title {
     text-align: center;
     padding-bottom: 20px;
+}
+
+div.img-user {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 100px;
+    width: 100px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+/* .position_form {
+    margin-bottom: 30px;
 }
 
 #input_form_image {
@@ -53,7 +45,7 @@
     margin-left: 25px;
     padding: 10px 20px;
     border-radius: 20%;
-}
+} */
 
 .projects {
     display: flex;

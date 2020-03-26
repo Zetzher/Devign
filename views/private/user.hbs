@@ -1,17 +1,15 @@
 <section>
     <div class="container profile-form">
-        <h1 class="username">Welcome {{user.username}}</h1>
         <form action="/private/user" method="post" enctype="multipart/form-data">
             <div class="position_form">
                 <label>
-                    <img src="{{user.imgPath}}" class="img-user" alt="Imagen del usuario">
+                    <div class="img-user" style="background-image: url({{user.imgPath}})"></div>
                     <input type="file" id="input_form_image" name="photo">
                     <input type="submit" id="input_form_save" value="SAVE">
                 </label>
-
+                <h1 class="username">Welcome {{user.username}}!</h1>
             </div>
         </form>
-
     </div>
 </section>
 {{!-- Two containers: My projects and My Cards --}}
