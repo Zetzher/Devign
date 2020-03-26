@@ -28,9 +28,9 @@ breakpoint {
 @media (min-width: 760px) {
   breakpoint {
     max-width: 24%;
-    
+
   }
-  
+
 }
 
 body {
@@ -133,6 +133,8 @@ header nav ul li .caret {
     background: linear-gradient(to right, #662D91, #0074BA, #00A99D);
   }
 
+
+
   .menu_bar .bt-menu {
     display: block;
     padding: 20px;
@@ -195,10 +197,10 @@ header nav ul li .caret {
 
   #shake_it:hover {
     -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-            animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-            color: white;
-          }
-  
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    color: white;
+  }
+
 }
 
 
@@ -508,13 +510,13 @@ header nav ul li .caret {
     font-weight: 500;
     color: white;
   }
-  
+
   .second_h2_article {
     font-size: 30px;
     font-weight: 500;
     color: white;
   }
-  
+
 }
 
 
@@ -526,74 +528,87 @@ header nav ul li .caret {
     font-weight: 500;
     color: white;
   }
-  
+
   .second_h2_article {
     font-size: 20px;
     font-weight: 500;
     color: white;
   }
+
+
 }
 
 #shake_it:hover {
   -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-          color: white;
-        }
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+  color: white;
+}
 
 @-webkit-keyframes shake-horizontal {
+
   0%,
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
+
   10%,
   30%,
   50%,
   70% {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
+
   20%,
   40%,
   60% {
     -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
+
   80% {
     -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    transform: translateX(8px);
   }
+
   90% {
     -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    transform: translateX(-8px);
   }
 }
+
 @keyframes shake-horizontal {
+
   0%,
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
+
   10%,
   30%,
   50%,
   70% {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
+
   20%,
   40%,
   60% {
     -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
+
   80% {
     -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    transform: translateX(8px);
   }
+
   90% {
     -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    transform: translateX(-8px);
   }
 }
 
