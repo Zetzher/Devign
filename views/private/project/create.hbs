@@ -1,20 +1,34 @@
 <section>
-
-    <h2>Creating a new project</h2>
-
-    <article>
+    <div class="cardwrap bg-blue">
         <div>
-            <p>Message Card: {{card.description}}</p>
+            <h1>New Project</h1>
         </div>
-<!--¿La ruta que tiene el action tiene que ser la misma que el router.post?
-Habiendo hecho un app.use que es /private/projects-->
-        <form action="/private/projects/create/{{card._id}}" method="post">
-            <input name="title" type="text" placeholder="My project title" required>
-            <input name="description" type="textarea" placeholder="Write here your first ideas" required>
-            
-            <button type="submit" class="btn btn-success">Save</button>
-            <a href="/random" class="btn btn-warning">Try again</a>
-        </form>
-    </article>
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <!-- front content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-blue-300px.png" alt="logo-green">
+                    </article>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <article class="card-form bg-lg-blue">
+                        <h3>Devign</h3>
+                        <p>{{card.description}}</p>
+                        <form class="project-form" action="/private/projects/create/{{card._id}}" method="post">
+                            <input name="title" type="text" placeholder="My project title" required>
+                            <textarea maxlength="120" name="description" type="textarea"
+                                placeholder="Write here your first ideas" required></textarea>
+                            <div class="button">
+                                <button type="submit" class="btn btn-green" value="Save">Save</button>
+                                <a href="/random" class="btn btn-purple">Try again</a>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
 
 </section>
