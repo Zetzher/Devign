@@ -1,14 +1,17 @@
 <section>
     <div class="container">
         <h1 class="username">Welcome {{user.username}}</h1>
-        <form action="/private/user" method="post" enctype="multipart/form-data">
-            <div class="position_form">
-                <img src="{{user.imgPath}}" class="col-lg-2 img-user rounded-circle" alt="Imagen del usuario">
-                <input type="file" name="photo" id="file" class="custom-file-input">
-                <label for="file">Choose a file</label>
-                <input type="submit" value="SAVE">
-            </div>
-        </form>
+            <form action="/private/user" method="post" enctype="multipart/form-data">
+                <div class="position_form">
+                     <label>
+                        <img src="{{user.imgPath}}" class="img-user" alt="Imagen del usuario"> 
+                        <input type="file" id="input_form_image" name="photo">
+                        <input type="submit" id="input_form_save" value="SAVE">
+                        </label>
+                    
+                </div>                  
+            </form>
+            
     </div>
 </section>
 {{!-- Two containers: My projects and My Cards --}}
