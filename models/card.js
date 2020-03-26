@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const cardSchema = new Schema ({
     description: { type: String, unique: true, required: true },
-    userId: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    userId: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {
     timestamps: true
 });
