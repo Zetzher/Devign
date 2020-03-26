@@ -487,7 +487,7 @@ header nav ul li .caret {
 }
 
 .first_h2_article {
-  font-size: 5vw;
+  font-size: 70px;
   margin-bottom: 40px;
   padding-top: 400px;
   font-weight: 500;
@@ -495,9 +495,42 @@ header nav ul li .caret {
 }
 
 .second_h2_article {
-  font-size: 4vw;
+  font-size: 50px;
   font-weight: 500;
   color: white;
+}
+
+@media (max-width: 760px) {
+  .first_h2_article {
+    font-size: 50px;
+    margin-bottom: 40px;
+    padding-top: 400px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .second_h2_article {
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+  }
+  
+}
+
+@media (max-width: 420px) {
+  .first_h2_article {
+    font-size: 40px;
+    margin-bottom: 40px;
+    padding-top: 400px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .second_h2_article {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
 }
 
 #shake_it:hover {
