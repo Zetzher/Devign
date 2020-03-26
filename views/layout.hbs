@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         {{!-- CSS Reset --}}
         <link rel='stylesheet' href='/stylesheets/reset.css' />
          {{!-- Google font --}}
@@ -25,6 +25,10 @@
         <link rel='stylesheet' href='/stylesheets/index.css' />
         <link rel="stylesheet" href="/stylesheets/forms.css">
         <link rel='stylesheet' href='/stylesheets/style.css'/>
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="fonts.css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="main.js"></script>
 
         {{!-- Favicon --}}
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -35,27 +39,31 @@
  {{!-- class="topnav" id="myTopnav" --}}
     <body>
 
-<header>
-    <h1 class="logo"><a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="logo devign"></a></h1></h1>
-   <ul class="nav">
-           {{#if isUserNotLogged}}
-                <li class="navlink"><a href="/random">Random</a></li class="navlink">
-                <li class="navlink"><a href="/auth/login">Login</a></li>
-                <li class="navlink"><a href="/auth/signup">SignUp</a></li class="navlink">
-            {{/if}}
-               {{#if isUserLogged}}
-               <li class="navlink"><a href="/random">Random</a></li class="navlink">
-                <li class="navlink"><a href="/private/user">Profile</a></li class="navlink">
-                <li class="navlink"><a href="/auth/logout">Logout</a></li class="navlink">
-            {{/if}}
-        </ul>
-         <div class="burger">
-            <i class="fas fa-bars">
-                </i>
-        </div>
- 
-</header>
         
+        <header>
+		<div class="menu_bar">
+            
+			<h1 class="logo"><a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar_principal" alt="logo devign"></a></h1>
+		</div>
+ 
+		<nav class="position_nav_inside">
+            
+			<ul class="position_nav">
+                <li><a href="/"><img src="/images/navbaricon-white.png" id="icon_navbar_animation" class="icon_navbar" alt="logo devign"></a></li>
+             
+                {{#if isUserNotLogged}}
+				<li><span><a href="/random" id="shake_it" >Random</a></li>
+				<li><span><a href="/auth/login" id="shake_it">Login</a></li>
+                <li><span><a href="/auth/signup" id="shake_it">SignUp</a></li>
+                {{/if}}
+				{{#if isUserLogged}}
+				<li><span><a href="/random" id="shake_it">Random</a></li>
+				<li><span><a href="/private/user" id="shake_it">Profile</a></li>
+                <li><span><a href="/auth/logout" id="shake_it">Logout</a></a></li>
+                {{/if}}
+			</ul>
+		</nav>
+	</header>
 
 
         <!--
