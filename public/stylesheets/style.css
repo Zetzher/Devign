@@ -10,6 +10,7 @@ body {
 
 /*Espacio para la navbar fixed*/
 .layout_body {
+  padding-top: 90px;
 }
 
 /*Backgrounds + Color text*/
