@@ -61,19 +61,17 @@ devign-project/
         ├── public
         │   ├── images
         │   ├── scripts
-        │   │   └── hamburguer.js
         │   └── stylesheets
-        │       └── style.css
         ├── routes
         │   ├── index.js
         │   ├── random.js
         │   ├── auth.js
         │   └── private
+        │       ├── user.js
         │       ├── cards.js
         │       └── projects.js
         │
         └── views
-            ├── partials
             ├── error.hbs
             ├── index.hbs
             ├── layout.hbs
@@ -92,56 +90,51 @@ devign-project/
 ```
 ## Routes
 
-| **Method** | **Route**                       | **Description**                                                 | Request  - Body                                          |
-| ---------- | ------------------------------- | ------------------------------------------------------------    | -------------------------------------------------------- |
-| `GET`      | `/`                             | Main page route. Renders home `index` view.                     |                                                          |
-| `GET`      | `/login`                        | Renders `login` form view.                                      |                                                          |
-| `POST`     | `/login`                        | Sends Login form data to the server.                            | { username, password }                                   |
-| `GET`      | `/signup`                       | Renders `signup` form view.                                     |                                                          |
-| `POST`     | `/signup`                       | Sends SignUp info to the server and creates user in the DB.     | { name, company, email, password }                       |
-| `GET`      | `/random`                       | Renders to the random card page                                 |                                                          |
-| `GET`      | `/user`                         | Priv route. Renders `user` view.                                |                                                          |
-| `POST`     | `/user`                         | Priv route. Sends edit profile info to server, updates DB.      |                                                          |
-| `GET`      | `/card/edit/`                   | Priv route. Renders `edit cards` form.                          |                                                          |
-| `PUT`      | `/card/edit/:_id`               | Priv route. Sends edit cards info to server, updates DB.        | { cardname, description }                                |
-| `GET`      | `/project/edit/`                | Priv route. Renders `edit projects` form.                       |                                                          |
-| `PUT`      | `/project/edit/:_id`            | Priv route. Sends edit projects info to server, updates DB.     | { projectname, company, description }                    |
-| `GET`      | `/card/create/`                 | Priv route. Renders `create cards` form.                        |                                                          |
-| `POST`     | `/card/create/`                 | Priv route. Sends new cards info to server, updates DB.         | { type, cardname, description }                          |
-| `GET`      | `/project/create/`              | Priv route. Renders `create projects` form.                     |                                                          |
-| `POST`     | `/project/create/:_id`          | Priv route. Sends new projects info to server, updates DB.      | { projectname, company, description}                     |
-| `DELETE`   | `/project`                      | Priv route. Deletes the user project from the DB.               |                                                          |
-| `DELETE`   | `/card`                         | Priv route. Deletes the user card from the DB.                  |                                                          |
-| `GET`      | `/logout`                       | Priv route. Destroy current session. Renders home `index` view. |                                                          |
+| **Method** | **Route**                   | **Description**                                                 | Request  - Body                                |
+| ---------- | ----------------------------| ------------------------------------------------------------    | -----------------------------------------------|
+| `GET`      | `/`                         | Main page route. Renders home `index` view.                     |                                                |
+| `GET`      | `/login`                    | Renders `login` form view.                                      |                                                |
+| `POST`     | `/login`                    | Sends Login form data to the server.                            | { username, password }                         |
+| `GET`      | `/signup`                   | Renders `signup` form view.                                     |                                                |
+| `POST`     | `/signup`                   | Sends SignUp info to the server and creates user in the DB.     | { name, email, password }                      |
+| `GET`      | `/random`                   | Renders to the random card page                                 |                                                |
+| `GET`      | `/user`                     | Priv route. Renders `user` view and list projects and cards     |                                                |
+| `GET`      | `/project/create/`          | Priv route. Renders `create projects` form.                     |                                                |
+| `POST`     | `/project/create/:_id`      | Priv route. Sends new projects info to server, updates DB.      | { projectname, description}                    |
+| `GET`      | `/project/edit/`            | Priv route. Renders `edit projects` form.                       |                                                |
+| `PUT`      | `/project/edit/:_id`        | Priv route. Sends edit projects info to server, updates DB.     | { projectname, description }                   |
+| `POST`     | `/card/create/`             | Priv route. Sends new cards info to server, updates DB.         | { description }                                |
+| `GET`      | `/card/create/`             | Priv route. Renders `create cards` form.                        |                                                |
+| `DELETE`   | `/projects`                 | Priv route. Deletes user project from DB.                       |                                                |
+| `DELETE`   | `/cards`                    | Priv route. Deletes user card from DB.                          |                                                |
+| `GET`      | `/logout`                   | Priv route. Destroy current session. Renders home `index` view. |                                                |
 
 ## Models
 
 * User model
 ````
   {
-    name: {String, required: true, unique: true},
-    email: {String, required: true, unique: true},
-    password: {String, required: true, unique: true},
-    image: {String, default: 'logo-devign-green-50px.png'},
-    projects: [projectsId],
-    cards: [cardsId]
+    username: String,
+    email: String,
+    password: String,
+    imgPath: { type: String, default: '/images/profile-default.png' },
+    projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
+    cards: [{ type: Schema.Types.ObjectId, ref: 'Card' }]
   }
 ````
 * Project model
 ````
   {
-    name: {String, required: true, unique: true},
-    card: {cardId},
-    description: String
+    title: { type: String, required: true, unique: true },
+    description: String,
+    card: { type: Schema.Types.ObjectId, ref: 'Card' }
   }
 ````
 * Card model
 ````
   {
-    user: {userId},
-    type: {String, value: ['A', 'B', 'C']}
-    title: String,
-    description: String
+    description: { type: String, unique: true, required: true },
+    userId: { type: Schema.Types.ObjectId, ref: 'User' }
   }
 ````
 
@@ -149,6 +142,10 @@ devign-project/
 ### GitHub
 
 https://github.com/AmaliaGlez/devign
+
+### Heroku
+
+https://devign-develop-design.herokuapp.com/
 
 ### Trello
 

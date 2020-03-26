@@ -3,13 +3,22 @@
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 /* Black:#333333 */
 
+.container {
+    display: inline-block;
+}
+
+.img-user {
+    max-width: 150px;
+    padding-top: 15px;
+}
 
 .private-img {
-    padding: 30px;
+
 }
 
 .div-name {
-    text-align: center;
+    text-align: start;
+    padding: 20px;
 }
 
 .div-title {
@@ -18,11 +27,6 @@
 
 .inline-block {
     display: inline-block;
-}
-
-.cards-align {
-    display: flex;
-    flex-direction:
 }
 
 .projects {
