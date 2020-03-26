@@ -43,7 +43,7 @@
 
 .back .card-form textarea {
 	height: 100px;
-	width: 190px;
+	width: 95%;
 	border-radius: 8px;
 	border: 1px solid #00A99D;
 	background-color: transparent;
@@ -66,30 +66,7 @@
 	text-align: center;
 }
 
-#save {
-	background: #00A99D;
-	color: white;
-	margin-top: 1.2em;
-	border: none;
-	border-radius: 7px;
-	padding: 0.9em 4em;
-	letter-spacing: 1.2px;
-	font-size: 0.98rem;
-	text-transform: uppercase;
-}
-
-#again {
-	background: #662D91;
-	color: white;
-	margin-top: 1.2em;
-	border: none;
-	border-radius: 7px;
-	padding: 0.9em 4em;
-	letter-spacing: 1.2px;
-	font-size: 0.98rem;
-	text-transform: uppercase;
-}
-
+/*Para borrar: save y again - substituidos en style.css por btn-purple y btn-green*/
 
 @media (min-width: 600px) {
 	.card-form {

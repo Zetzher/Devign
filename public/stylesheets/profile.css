@@ -4,16 +4,26 @@
 /* Black:#333333 */
 
 .container {
-    display: inline-block;
+    text-align: center;
+}
+
+.position_form {
+    margin-bottom: 30px;
+}
+
+.trying {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .img-user {
-    max-width: 150px;
-    padding-top: 15px;
+    width: 250px;
+    padding-top: 30px;
 }
 
-.private-img {
-
+.username {
+    padding-top: 30px;
 }
 
 .div-name {
@@ -23,6 +33,7 @@
 
 .div-title {
     text-align: start;
+    padding-top: 60px;
 }
 
 .inline-block {
@@ -43,6 +54,8 @@
     width: 200px;
     border-radius: 5%;
     padding: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,6 +74,7 @@
     height: 300px;
     width: 200px;
     border-radius: 5%;
+    margin-bottom: 15px;
     color: white;
     background-color: #00A99D;
 }

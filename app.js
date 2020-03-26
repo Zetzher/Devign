@@ -15,7 +15,8 @@ const MongoStore = require("connect-mongo")(session);
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   })
   .then(x => {
     console.log(
@@ -74,7 +75,7 @@ app.use((req, res, next) => {
     let user = req.session.currentUser;
     
     res.locals.userInfo = user;
-   // console.log(res.locals.userInfo);
+    //console.log(res.locals.userInfo);
     res.locals.isUserLogged = true;
   } else {
     res.locals.isUserNotLogged = true;
