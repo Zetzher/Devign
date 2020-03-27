@@ -16,11 +16,11 @@
                     <!-- back content -->
                     <article class="card-form bg-lg-blue">
                         <h3>Devign</h3>
-                        <p>{{project.card.0.description}}</p>
+                        <p>{{project.card.description}}</p>
                         <form class="project-form" action="/private/projects/edit" method="post">
+                            <input name="id" type="hidden" value={{project._id}}>
                             <input name="title" type="text" value={{project.title}} required>
-                            <textarea maxlength="120" name="description" type="textarea"
-                                value={{project.description}} required></textarea>
+                            <textarea maxlength="120" name="description" type="textarea" required>{{project.description}}</textarea>
                             <div class="button">
                                 <button type="submit" class="btn btn-green" value="Save">Save</button>
                                 <a href="/random" class="btn btn-purple">New project</a>
