@@ -13,6 +13,11 @@
     padding-bottom: 40px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .btn-project {
     width: 360px;
 }
@@ -24,28 +29,45 @@
 
 div.img-user {
     /* cambia estos dos valores para definir el tamaño de tu círculo */
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     /* los siguientes valores son independientes del tamaño del círculo */
     background-repeat: no-repeat;
     background-position: 50%;
+    border: 1px solid;
     border-radius: 50%;
     background-size: 100% auto;
 }
-/* .position_form {
-    margin-bottom: 30px;
+
+.img-username {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.username {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+
+.position_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #input_form_image {
-    display:none;
+    display: none;
 }
 
 #input_form_save {
-    background: linear-gradient(to left, #662D91, #00A99D);
-    margin-left: 25px;
-    padding: 10px 20px;
-    border-radius: 20%;
-} */
+    /*background: linear-gradient(to left, #662D91, #00A99D);*/
+    border: none;
+    color: grey;
+    height: 25px;
+    background: white;
+} 
 
 .projects {
     display: flex;
@@ -58,7 +80,6 @@ div.img-user {
 
 .projects-list {
     padding: 10px 20px;
-    /* padding-left: 20px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,7 +110,6 @@ div.img-user {
 }
 
 .card-box {
-    /* padding-left: 20px; */
     display: flex;
     flex-direction: row;
     justify-content: start;
