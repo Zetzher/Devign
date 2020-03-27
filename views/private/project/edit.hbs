@@ -1,20 +1,33 @@
 <section>
-
-    <h2>Editing project</h2>
-
-    <article>
+    <div class="cardwrap bg-blue">
         <div>
-            <p>Message Card: {{project.card.0.description}}</p>
+            <h1>Edit Project</h1>
         </div>
 
-        <form action="/private/projects/edit" method="post">
-        	<input name="id" type="hidden" value={{project._id}}>
-            <input name="title" type="text" value={{project.title}} required>
-            <input name="description" type="text" value={{project.description}} required>
-            {{!--</textarea>--}}
-            <button type="submit" class="btn btn-green">Save</button>
-            <a href="/random" class="btn btn-purple">New project</a>
-        </form>
-    </article>
-    
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <!-- front content -->
+                    <article class="card-form">
+                        <img src="/images/logo-devign-blue-300px.png" alt="logo-blue">
+                    </article>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <article class="card-form bg-lg-blue">
+                        <h3>Devign</h3>
+                        <p>{{project.card.description}}</p>
+                        <form class="project-form" action="/private/projects/edit" method="post">
+                            <input name="id" type="hidden" value={{project._id}}>
+                            <input name="title" type="text" value={{project.title}} required>
+                            <textarea maxlength="120" name="description" type="textarea" required>{{project.description}}</textarea>
+                            <div class="button">
+                                <button type="submit" class="btn btn-green" value="Save">Save</button>
+                                <a href="/random" class="btn btn-purple">New project</a>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
 </section>
