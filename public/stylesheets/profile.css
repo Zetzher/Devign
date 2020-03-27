@@ -27,6 +27,12 @@
     padding-bottom: 20px;
 }
 
+.circle {
+    background: linear-gradient(40deg, #662D91, #00A99D);
+    padding: 6px;
+    border-radius: 50%;
+}
+
 div.img-user {
     /* cambia estos dos valores para definir el tamaño de tu círculo */
     height: 150px;
@@ -34,9 +40,15 @@ div.img-user {
     /* los siguientes valores son independientes del tamaño del círculo */
     background-repeat: no-repeat;
     background-position: 50%;
-    border: 1px solid;
+    border: 3px solid white;
     border-radius: 50%;
     background-size: 100% auto;
+}
+
+div.img-user.nav-profile {
+    height: 45px;
+    width: 45px;
+    border: 1px solid white;
 }
 
 .img-username {
@@ -49,6 +61,7 @@ div.img-user {
     display: flex;
     text-align: center;
     padding: 20px;
+    color: #0074BA;
 }
 
 .position_form {
@@ -132,6 +145,11 @@ div.img-user {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.la-mami {
+    padding-top: 50px;
 }
 
 @media (max-width: 760px) {
