@@ -59,9 +59,9 @@
                 {{/if}}
                 {{#if isUserLogged}}
                 <li><span><a href="/random" id="shake_it">Random</a></li>
-                <li><span><a href="/private/user" id="shake_it">
+                <li><span><a href="/private/user" id="shake_it">Profile
                 
-                    <div class="img-user nav-profile" style="background-image: url({{user.imgPath}})"></div>
+                    {{!-- <div class="img-user nav-profile" style="background-image: url(user.imgPath)"></div> --}}
                 
                 </a></li>
                 <li><span><a href="/auth/logout" id="shake_it">Logout</a></a></li>
