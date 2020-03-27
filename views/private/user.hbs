@@ -1,10 +1,12 @@
-<section>
+<section class="la-mami">
     <div class="container profile-form">
         <form action="/private/user" method="post" enctype="multipart/form-data">
             <div class="position_form">
                 <label class="img-username">
-                    <div class="img-user" style="background-image: url({{user.imgPath}})"></div>
-                    <input type="file" id="input_form_image" name="photo">
+                    <div class="circle">
+                        <div class="img-user" style="background-image: url({{user.imgPath}})"></div>
+                        <input type="file" id="input_form_image" name="photo">
+                    </div>
                     <input type="submit" id="input_form_save" value="Save">
                 </label>
                 <h1 class="username">Welcome {{user.username}}!</h1>
