@@ -786,17 +786,8 @@ footer {
 }
 
 .contact_info {
-  font-size: 18px;
-  letter-spacing: 7px;
-}
-
-.details_info {
   font-size: 13px;
-  letter-spacing: 5px;
 }
-
-
-
 
 /*Menu toggle button*/
 #menu-btn {

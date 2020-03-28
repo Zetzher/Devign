@@ -53,18 +53,18 @@
                             alt="logo devign"></a></li>
 
                 {{#if isUserNotLogged}}
-                <li><span><a href="/random" id="shake_it">Random</a></li>
-                <li><span><a href="/auth/login" id="shake_it">Login</a></li>
-                <li><span><a href="/auth/signup" id="shake_it">SignUp</a></li>
+                <li><span><a href="/random">Random</a></li>
+                <li><span><a href="/auth/login">Login</a></li>
+                <li><span><a href="/auth/signup">SignUp</a></li>
                 {{/if}}
                 {{#if isUserLogged}}
-                <li><span><a href="/random" id="shake_it">Random</a></li>
-                <li><span><a href="/private/user" id="shake_it">Profile
-                
-                    {{!-- <div class="img-user nav-profile" style="background-image: url(user.imgPath)"></div> --}}
-                
-                </a></li>
-                <li><span><a href="/auth/logout" id="shake_it">Logout</a></a></li>
+                <li><span><a href="/random">Random</a></li>
+                <li><span><a href="/private/user">Profile
+
+                            {{!-- <div class="img-user nav-profile" style="background-image: url(user.imgPath)"></div> --}}
+
+                        </a></li>
+                <li><span><a href="/auth/logout">Logout</a></a></li>
                 {{/if}}
             </ul>
 
@@ -86,17 +86,11 @@
     </section>
 
     <footer>
-
-
-        <div>
-            <h3 class="contact_info">
-                Contact info: <br>
-            </h3>
-            <h4 class="details_info">
-                Devign (Develop and Design)<br>
-                Fake Street, 20<br>
-                devign@gmail.com<br>
-            </h4>
+        <div class="contact_info">
+            <p>Contact info:</p>
+            <p>Devign (Develop&Design)</p>
+            <p>Fake Street, 20</p>
+            <p>devign@gmail.com</p>
         </div>
     </footer>
     {{!-- Style JS --}}
