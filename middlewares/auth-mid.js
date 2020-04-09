@@ -24,9 +24,6 @@ function userIsLoggedIn(req, res, next) {
     }
 }
 
-
-
-
 module.exports = {
     userIsNotLoggedIn,
     userIsLoggedIn,
