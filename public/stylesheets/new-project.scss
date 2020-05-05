@@ -1,0 +1,32 @@
+.bg-lg-blue form.project-form input {
+	height: auto;
+	width: 95%;
+	border: none {
+        radius: 8px;
+    }
+    background-color: #71c1da;
+	color: #333333;
+	font: {
+        size: 16px;
+        weight: 500;
+    }
+	padding-bottom: 3%;
+}
+
+.back .card-form .project-form textarea {
+	height: 100px;
+	width: 95%;
+	border: 1px solid transparent {
+        radius: 8px;
+    }
+	background-color: transparent;
+	color: #333333;
+	font-size: 16px;	
+	padding-top: 5px;
+}
+
+article.bg-lg-blue p {
+	font-size: 18px;
+	color: #0074BA;
+	padding: 3% auto;
+}

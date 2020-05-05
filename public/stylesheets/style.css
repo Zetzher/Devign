@@ -1,121 +1,88 @@
+@charset "UTF-8";
 /* COLORS */
 /* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 /* Black:#333333 */
-
 /*Tipografía*/
 body {
-  font-family: 'Quicksand', sans-serif;
-}
+  font-family: 'Quicksand', sans-serif; }
 
 /*Espacio para la navbar fixed*/
 .layout_body {
-  padding-top: 90px;
-}
+  padding-top: 90px; }
 
 @media (max-width: 760px) {
-  
   .layout_body {
-    padding-top: 0px;
-  }
-
-}
-
-
+    padding-top: 0px; } }
 @media (max-width: 420px) {
-
   .layout_body {
-    padding-top: 0px;
-  }
-  
-}
-
+    padding-top: 0px; } }
 /*Backgrounds + Color text*/
 .bg-purple {
   background-color: #662D91;
-  color: #aca8e5;
-}
-
+  color: #aca8e5; }
 .bg-blue {
   background-color: #0074BA;
-  color: #71c1da;
-}
-
+  color: #71c1da; }
 .bg-green {
   background-color: #00A99D;
-  color: #74ebd5;
-}
-
+  color: #74ebd5; }
 .bg-lg-purple {
   background-color: #aca8e5;
-  color: #662D91;
-}
-
-.bg-lg-blue {
+  color: #662D91; }
+.bg-lg-lg-blue {
   background-color: #71c1da;
-  color: #0074BA;
-}
-
-.bg-lg-green {
+  color: #0074BA; }
+.bg-lg-lg-green {
   background-color: #74ebd5;
-  color: #00A99D;
-}
+  color: #00A99D; }
 
 .txt-black {
-  color: #333333;
-}
-
+  color: #333333; }
 .txt-purple {
-  color: #662D91;
-}
-
+  color: #662D91; }
 .txt-green {
-  color: #00A99D;
-}
+  color: #00A99D; }
 
 /*Botones de cards*/
 .button {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-content: center;
-	text-align: center;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: center; }
 
 .btn-green {
-	background: #00A99D;
-	color: #74ebd5;
-	margin-top: 1.2em;
-	border: none;
-	border-radius: 7px;
-	padding: 0.9em 4em;
-	letter-spacing: 1.2px;
-	font-size: 0.98rem;
-	text-transform: uppercase;
-}
-
+  background: #00A99D;
+  color: #74ebd5;
+  margin-top: 1.2em;
+  border: none;
+    border-radius: 7px;
+  padding: 0.9em 4em;
+  letter-spacing: 1.2px;
+  font-size: 0.98rem;
+  text-transform: uppercase; }
 .btn-purple {
-	background: #662D91;
-	color: #aca8e5;
-	margin-top: 1.2em;
-	border: none;
-	border-radius: 7px;
-	padding: 0.9em 4em;
-	letter-spacing: 1.2px;
-	font-size: 0.98rem;
-	text-transform: uppercase;
-}
+  background: #662D91;
+  color: #aca8e5;
+  margin-top: 1.2em;
+  border: none;
+    border-radius: 7px;
+  padding: 0.9em 4em;
+  letter-spacing: 1.2px;
+  font-size: 0.98rem;
+  text-transform: uppercase; }
 
 a:hover.btn {
-    text-decoration:none;
-    pointer-events: auto;
-    cursor: default;
-    color: white;
-}
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: default;
+  color: white; }
 
 button:hover.btn {
-    text-decoration:none;
-    pointer-events: visiblePainted;
-    cursor: default;
-    color: white;
-}
+  text-decoration: none;
+  pointer-events: visiblePainted;
+  cursor: default;
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */

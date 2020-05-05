@@ -1,0 +1,88 @@
+/* COLORS */
+/* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
+/* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
+/* Black:#333333 */
+
+.back {
+    & .card {
+
+    &wrap {
+	max-width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+
+    &-form{
+        width: 100%;
+	    height: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+	    background-color: #74ebd5;
+	    border-radius: 30px;
+	    color: #00A99D;
+	    padding: 20px;
+        margin: auto; 
+        
+        & textarea {
+            height: 100px;
+	        width: 95%;
+	        border: 1px solid #00A99D {
+                radius: 8px;
+            }
+	        background-color: transparent;
+	        color: #333333;
+	        font-size: 16px;
+        }
+    }
+
+    & > img {
+      max-width: 45%;
+        height: auto;
+        margin: {
+            bottom: 10%;
+            left: 13px;   
+        }
+    }
+
+    & > p {
+       color: #333333;
+       font-size: 16px; 
+    }
+    }
+}
+}
+
+.front .card-form {
+    background: linear-gradient(10deg, #aca8e5, #71c1da, #74ebd5);
+    
+    & > img {
+        max-width: 75%;
+        height: auto;
+        margin-left: 15px;
+    }
+}
+
+.button {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-content: center;
+	text-align: center;
+}
+
+@media (min-width: 600px) {
+	.card-form {
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1400px) {
+	.card-form {
+		width: 100%;
+	}
+}

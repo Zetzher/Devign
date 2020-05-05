@@ -1,170 +1,133 @@
+@charset "UTF-8";
 /* COLORS */
 /* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
 /* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
 /* Black:#333333 */
-
 .contenedor {
-    margin: 0;
-    padding: 0;
-}
-
-.contenedor {
-    justify-content: center;
+  margin: 0;
+  padding: 0;
     padding-bottom: 40px;
-}
+  justify-content: center; }
 
 .container {
-    display: flex;
-    justify-content: center;
-}
+  display: flex;
+  justify-content: center; }
 
 .btn-project {
-    width: 360px;
-}
+  width: 360px; }
 
 .div-title {
-    text-align: center;
-    padding-bottom: 20px;
-}
+  text-align: center;
+  padding-bottom: 20px; }
 
 .circle {
-    background: linear-gradient(40deg, #662D91, #00A99D);
-    padding: 6px;
-    border-radius: 50%;
-}
+  background: linear-gradient(40deg, #662D91, #00A99D);
+  padding: 6px;
+  border-radius: 50%; }
 
 div.img-user {
-    /* cambia estos dos valores para definir el tamaño de tu círculo */
-    height: 150px;
-    width: 150px;
-    /* los siguientes valores son independientes del tamaño del círculo */
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border: 3px solid white;
-    border-radius: 50%;
-    background-size: 100% auto;
-}
-
-div.img-user.nav-profile {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  height: 150px;
+  width: 150px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% auto;
+  border: 3px solid white;
+    border-radius: 50%; }
+  div.img-user.nav-profile {
     height: 45px;
     width: 45px;
-    border: 1px solid white;
-}
+    border: 1px solid white; }
 
 .img-username {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-}
+  display: flex;
+  justify-content: center;
+  padding-top: 30px; }
 
 .username {
-    display: flex;
-    text-align: center;
-    padding: 20px;
-    color: #0074BA;
-}
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  color: #0074BA; }
 
 .position_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 #input_form_image {
-    display: none;
-}
-
+  display: none; }
 #input_form_save {
-    /*background: linear-gradient(to left, #662D91, #00A99D);*/
-    border: none;
-    color: grey;
-    height: 25px;
-    background: white;
-}
+  border: none;
+  color: grey;
+  height: 25px;
+  background: white; }
 
 .projects {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    background-color: #662D91;
-    height: 80px;
-    border-radius: 10px;
-}
-
-.projects-list {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: #662D91;
+  height: 80px;
+  border-radius: 10px; }
+  .projects-list {
     padding: 10px 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-}
+    align-items: center; }
 
 .card-list {
-    padding: 0px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-list>img {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .card-list > img {
     width: 40%;
-    padding: 10% 0%;
-}
+    padding: 10% 0%; }
 
 .cards {
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background-color: #00A99D;
-    margin: 10px;
-}
-
+  height: 300px;
+  width: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #00A99D;
+  margin: 10px; }
+  .cards button {
+    justify-items: flex-end; }
 .card-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap; }
 .card-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.cards button {
-    justify-items: flex-end;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
 .el-papi {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 50px 0;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 0; }
 
 .la-mami {
-    padding-top: 50px;
-}
+  padding-top: 50px; }
 
 @media (max-width: 760px) {
-    .card-box {
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-    }
+  .card-box {
+    justify-content: center;
+    padding: 0;
+    margin: 0; }
 
-    
+  a.btn.btn-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; } }
 
-    a.btn.btn-project {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-}
-
-}
+/*# sourceMappingURL=profile.css.map */

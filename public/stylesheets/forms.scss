@@ -1,0 +1,194 @@
+/* COLORS */
+/* Pure Colors: purple:#662D91, blue:#0074BA, green#00A99D */
+/* Lighter Colors: purple:#aca8e5, blue:#71c1da, green#74ebd5 */
+/* Black:#333333 */
+
+* {
+    box: {
+        sizing: border-box;
+    }
+    margin: 0;
+    padding: 0;
+    outline: none;
+    transition: all 0.3s ease;
+	animation: {
+        delay: 0s;
+    }
+}
+
+$background: #74ebd5;
+
+.bg {
+    &-gradient {
+        background: $background -webkit-linear-gradient(to bottom, #74ebd5, #aca8e5) linear-gradient(to bottom, #74ebd5, #aca8e5);
+        font: {
+            size: 16px;
+        }
+        line: {
+            height: 1.5;
+        }
+        color: #888;
+    }
+}
+
+.pagewrap {
+    max: {
+        width: 100%;
+    }
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify: {
+        content: center;
+    }
+    align: {
+        items: center;
+    }
+}
+
+.form {
+    width: 95%;
+	height: 600px;
+    display: flex;
+    align: {
+        items: center;
+    }
+    justify: {
+        content: center;
+    }
+    flex: {
+        flow: column wrap;
+    }
+    background: {
+        color: #ecedee;
+    }
+    border: {
+        radius: 20px;
+    }
+    &__title {
+        margin: {
+            bottom: 1em;
+        }
+        position: relative;
+        z-index: 2;
+        background: transparent;
+        text-transform: uppercase;
+    }
+    &__submit {
+        margin: {
+            top: 1.2em;
+        }
+        border: none { 
+            radius: 7px;
+            }
+            padding:0.9em 4em;
+            background: {
+                color: #71c1da;
+            }
+            color: #fff;
+            letter: {
+                spacing: 1.2px;
+            }
+            font: {
+                size: 0.98rem;
+            }
+            text: {
+                transform: uppercase;
+            }
+            cursor: pointer;
+            transition: all 0s ease;
+            &.clicked {
+                position: relative;
+                top: 1px;
+            }
+    }
+}
+
+@media (min-width: 600px) {
+	.form {
+		max-width: 380px;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1400px) {
+	.form {
+		width: 35%;
+	}
+}
+
+.container {
+    position: relative;
+	width: 90%;
+	height: 10%;
+	margin: {
+        top: 1em;
+    }
+    &.profile-form{
+        position: static;
+    }
+    &__input {
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        border: 1px solid white;
+        background: {
+            color: transparent;
+        }
+        color: #666;
+        font: {
+            weight: bold;
+        }
+        border: {
+            radius: 7px;
+        }
+        &:first-of-type {
+            margin: {
+                bottom: 1em;
+            }
+        }
+        &:focus+label,:valid+label {
+            top: -8px;
+            left: 3px;
+            width: 40%;
+            height: 15%;
+            padding: 0.8em 1em; 
+        }
+    }
+    &__label {
+        position: absolute;
+        top: -8px;
+        left: 3px;
+        width: 35%;
+        height: 10%;
+        padding: 0.8em 3em;
+        background: {
+            color: #71c1da;
+        }
+        display: flex;
+        justify: {
+            content: center;
+        }
+        align: {
+            items: center;
+        }
+        color: #fff;
+        text: {
+            transform: uppercase;
+        }
+        font: {
+            size: 0.7rem;
+        }
+        border: {
+            radius: 7px; 
+        }
+    }
+}
+
+@media (min-width: 500px) {
+	.container__label {
+		top: 0px;
+		left: 15px;
+		height: 100%;
+		padding: 0;
+	}
+}
